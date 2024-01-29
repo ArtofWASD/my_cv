@@ -9,7 +9,7 @@ const Header = () => {
   ]
   return (
     <header>
-      <div className="grid grid-flow-col my-4">
+      <div className="grid grid-flow-col">
         <NavMenu menuItems={menuItems} />
       </div>
     </header>

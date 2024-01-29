@@ -1,10 +1,11 @@
+import Button from '@/src/components/button/button'
 import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      <p> About Page</p>
-    </div>
+    <main className="flex justify-center">
+      <p className="text-center py-10"> About Page</p>
+    </main>
   )
 }
 

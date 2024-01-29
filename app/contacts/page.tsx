@@ -2,9 +2,9 @@ import React from 'react'
 
 const Contacts = () => {
   return (
-    <div>
-      <p>Contact page</p>
-    </div>
+    <main>
+      <p className="text-center py-10" >Contact page</p>
+    </main>
   )
 }
 
