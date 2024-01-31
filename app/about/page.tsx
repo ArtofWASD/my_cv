@@ -1,4 +1,3 @@
-import Button from '@/src/components/button/button'
 import React from 'react'
 
 const About = () => {

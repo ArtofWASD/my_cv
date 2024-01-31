@@ -5,7 +5,7 @@ import React from "react"
 
 const Avatar = () => {
   return (
-    <div className="flex justify-center  items-center">
+    <div className="flex justify-center items-center">
       <motion.div
         className="box w-64 h-64 bg-slate-600 absolute z-10 rounded-2xl"
         animate={{

@@ -11,22 +11,28 @@ interface INavItems {
 }
 
 const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
+  const icon = {
+    initial: { opacity: 0, y: 0 },
+    hover: { scale: 1.2, y: -28, opacity: 1, transition: { duration: 0.5 } },
+  }
+
+  const text = {
+    hover: { scale: 1 },
+  }
   return (
     <>
       <div className="flex justify-center gap-20 mt-10">
         {menuItems.map((item) => (
           <div key={item.name}>
             <Link href={item.url} className="grid justify-items-center items-end">
-              <p className="absolute cursor-pointer text-xl">{item.name}</p>
-              <motion.div
-                initial={{ opacity: 0, y: 0 }}
-                whileHover={{
-                  scale: 1.2,
-                  y: -35,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                }}
-                whileTap={{ scale: 0.9 }}>
+              {/* <p className="absolute cursor-pointer text-xl"></p> */}
+              <motion.p
+                className="absolute cursor-pointer text-xl"
+                variants={text}
+                whileHover="hover">
+                {item.name}
+              </motion.p>
+              <motion.div variants={icon} initial="initial" whileHover="hover">
                 <Image
                   src={item.img}
                   width="45"
