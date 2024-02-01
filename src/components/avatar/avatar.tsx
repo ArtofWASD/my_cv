@@ -7,7 +7,7 @@ const Avatar = () => {
   return (
     <div className="flex justify-center items-center">
       <motion.div
-        className="box w-64 h-64 bg-slate-600 absolute z-10 rounded-2xl"
+        className="box w-52 h-52 bg-slate-600 absolute z-10 rounded-2xl"
         animate={{
           rotate: [180, 0],
         }}
@@ -24,7 +24,7 @@ const Avatar = () => {
         }}
       />
       <motion.div
-        className="box w-96 h-96 bg-blue-500 relative z-0 rounded-2xl"
+        className="box w-72 h-72 bg-blue-500 relative z-0 rounded-2xl"
         animate={{
           rotate: [0, 180],
         }}
@@ -40,7 +40,9 @@ const Avatar = () => {
           },
         }}
       />
-      {/* <Image src="/icons/avatar.png" width="350" height="350" alt="avatar" className="absolute z-20"/> */}
+      <div className="absolute z-20">
+        Здесь будет ваще лицо
+      </div>
     </div>
   )
 }
