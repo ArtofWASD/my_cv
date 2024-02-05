@@ -13,25 +13,24 @@ interface INavItems {
 const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
   const icon = {
     initial: { opacity: 0, y: 0 },
-    hover: { scale: 1.2, y: -28, opacity: 1, transition: { duration: 0.5 } },
+    hover: { scale: 1.2, y: -35, opacity: 1, transition: { duration: 0.5 } },
+    tap: { scale: 1, y: -30 },
   }
 
   const text = {
-    hover: { scale: 1 },
+    hover: { scale: 1.2 },
+    tap: { scale: 1 },
   }
   return (
     <>
       <div className="flex justify-center gap-20">
         {menuItems.map((item) => (
-          <div key={item.name}>
+          <motion.div key={item.name} initial="initial" whileHover="hover" whileTap="tap">
             <Link href={item.url} className="grid justify-items-center items-end">
-              <motion.p
-                className="absolute cursor-pointer text-xl"
-                variants={text}
-                whileHover="hover">
+              <motion.p className="absolute cursor-pointer text-xl" variants={text}>
                 {item.name}
               </motion.p>
-              <motion.div variants={icon} initial="initial" whileHover="hover">
+              <motion.div variants={icon}>
                 <Image
                   src={item.img}
                   width="45"
@@ -41,7 +40,7 @@ const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
                 />
               </motion.div>
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>
