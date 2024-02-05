@@ -25,7 +25,6 @@ const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
         {menuItems.map((item) => (
           <div key={item.name}>
             <Link href={item.url} className="grid justify-items-center items-end">
-              {/* <p className="absolute cursor-pointer text-xl"></p> */}
               <motion.p
                 className="absolute cursor-pointer text-xl"
                 variants={text}
