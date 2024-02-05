@@ -40,7 +40,7 @@ const Avatar = () => {
           },
         }}
       />
-      <div className="absolute z-20">
+      <div className="absolute z-20 text-white">
         Здесь будет ваще лицо
       </div>
     </div>

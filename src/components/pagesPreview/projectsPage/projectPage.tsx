@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
+import Link from "next/link"
 import React from "react"
 
 const ProjectPage = () => {
@@ -9,19 +10,23 @@ const ProjectPage = () => {
   }
   const image = {
     rest: { x: 100, opacity: 0 },
+    hover: { x: 0, opacity: 1, scale: 1.2, transition: { duration: 0.5 } },
+  }
+  const link = {
+    rest: { x: 100, opacity: 0 },
     hover: { x: 0, opacity: 1, transition: { duration: 0.5 } },
   }
   return (
-    <>
-      <p className="project-header text-center sticky text-2xl bg-lime-400">
+    <section className="project-preview">
+      <p className="project-header text-center sticky text-2xl pt-4 bg-lime-400 bg-opacity-45">
         Some Header
       </p>
       <motion.div
-        className="grid items-center h-96 w-dvw bg-lime-400 px-48"
+        className="grid items-center h-96 bg-lime-400 bg-opacity-45 px-48"
         initial="rest"
         whileHover="hover"
         animate="rest">
-        <motion.div className="project-body grid grid-flow-col">
+        <div className="project-body grid grid-flow-col">
           <motion.p className="text-center my-auto text-balance" variants={text}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
             veritatis accusamus reiciendis voluptatum incidunt, ex vitae consequatur dolor
@@ -35,12 +40,16 @@ const ProjectPage = () => {
           </motion.p>
           <motion.div
             layout
-            className="w-72 h-72 bg-blue-500"
-            variants={image}
-        ></motion.div>
+            className="project-image w-72 h-72 bg-blue-500"
+            variants={image}></motion.div>
+        </div>
+        <motion.div variants={link}>
+          <p className="project-link text-sm">
+            Github: <Link href="https://github.com/">Project link</Link>
+          </p>
         </motion.div>
       </motion.div>
-    </>
+    </section>
   )
 }
 
