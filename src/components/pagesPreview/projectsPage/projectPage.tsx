@@ -10,19 +10,19 @@ const ProjectPage = () => {
   }
   const image = {
     rest: { x: 100, opacity: 0 },
-    hover: { x: 0, opacity: 1, scale: 1.2, transition: { duration: 0.5 } },
+    hover: { x: 0, opacity: 1, scale: 1.2, transition: { duration: 0.5 }, rotate:[45, 90 ] },
   }
   const link = {
     rest: { x: 100, opacity: 0 },
     hover: { x: 0, opacity: 1, transition: { duration: 0.5 } },
   }
   return (
-    <section className="project-preview">
-      <p className="project-header text-center sticky text-2xl pt-4 bg-lime-400 bg-opacity-45">
+    <section className="project-preview z-100">
+      <p className="project-header text-center sticky text-2xl pt-4">
         Some Header
       </p>
       <motion.div
-        className="grid items-center h-96 bg-lime-400 bg-opacity-45 px-48"
+        className="grid items-center h-96 px-48"
         initial="rest"
         whileHover="hover"
         animate="rest">
@@ -40,7 +40,7 @@ const ProjectPage = () => {
           </motion.p>
           <motion.div
             layout
-            className="project-image w-72 h-72 bg-blue-500"
+            className="project-image w-72 h-72 bg-blue-500 rounded-2xl"
             variants={image}></motion.div>
         </div>
         <motion.div variants={link}>

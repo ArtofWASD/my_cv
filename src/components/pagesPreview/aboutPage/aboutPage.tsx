@@ -3,7 +3,7 @@ import Avatar from "../../avatar/avatar"
 
 const AboutPage = () => {
   return (
-    <div className="grid grid-flow-col items-center justify-center h-96  bg-amber-400 bg-opacity-45 px-48">
+    <div className="grid grid-flow-col items-center justify-center h-96 px-48">
       <p className="text-balance text-center">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ratione quam ut
         corrupti reprehenderit tempora, minima tenetur doloremque, animi ad distinctio

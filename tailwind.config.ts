@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -8,8 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        sky: "url('/paralaxImages/sky.png')",
+        mountain3: "url('/paralaxImages/mountainsThird.png')",
+        mountain2: "url('/paralaxImages/mountainsSecond.png')",
+        mountain1: "url('/paralaxImages/mountainsFirst.png')",
+        tree: "url('/paralaxImages/woods.png')",
+      },
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config
