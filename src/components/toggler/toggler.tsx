@@ -16,7 +16,11 @@ const Toggler = () => {
           onChange={handleCheckboxChange}
           className="sr-only"
         />
-        <span className="label flex items-center text-sm font-medium text-black">
+        <span
+          className={`label flex items-center text-sm font-medium ${
+            isChecked ? "text-black" : "text-blue-500"
+          } `}
+        >
           Ру
         </span>
         <span
@@ -30,7 +34,11 @@ const Toggler = () => {
             }`}
           ></span>
         </span>
-        <span className="label flex items-center text-sm font-medium text-black">
+        <span
+          className={`label flex items-center text-sm font-medium ${
+            isChecked ? "text-blue-500" : "text-black"
+          } `}
+        >
           En
         </span>
       </label>
