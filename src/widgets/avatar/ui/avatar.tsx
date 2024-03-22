@@ -1,9 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
-import Image from "next/image"
-import React from "react"
 
-const Avatar = () => {
+export const Avatar = () => {
   return (
     <div className="flex justify-center items-center">
       <motion.div
@@ -47,4 +45,3 @@ const Avatar = () => {
   )
 }
 
-export default Avatar

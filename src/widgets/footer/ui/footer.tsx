@@ -1,6 +1,6 @@
 import React from "react"
 
-const Footer = () => {
+export const Footer = () => {
   const year = new Date().getFullYear()
   return (
     <footer className="grid justify-items-center content-evenly bg-blue-300">
@@ -10,4 +10,3 @@ const Footer = () => {
   )
 }
 
-export default Footer

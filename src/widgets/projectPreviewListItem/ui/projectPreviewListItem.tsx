@@ -1,16 +1,21 @@
 "use client"
+import { GithubLink } from "@/src/shared/ui/githubLink"
 import { motion } from "framer-motion"
-import Link from "next/link"
-import React from "react"
 
-const ProjectPage = () => {
+export const ProjectPreviewListItem = () => {
   const text = {
     rest: { x: 0, y: 0 },
     hover: { x: -28, opacity: 1, transition: { duration: 0.5 } },
   }
   const image = {
     rest: { x: 100, opacity: 0 },
-    hover: { x: 0, opacity: 1, scale: 1.2, transition: { duration: 0.5 }, rotate:[45, 90 ] },
+    hover: {
+      x: 0,
+      opacity: 1,
+      scale: 1.2,
+      transition: { duration: 0.5 },
+      rotate: [45, 90],
+    },
   }
   const link = {
     rest: { x: 100, opacity: 0 },
@@ -18,9 +23,7 @@ const ProjectPage = () => {
   }
   return (
     <section className="project-preview z-100">
-      <p className="project-header text-center sticky text-2xl pt-4">
-        Some Header
-      </p>
+      <p className="project-header text-center sticky text-2xl pt-4">Some Header</p>
       <motion.div
         className="grid items-center h-96 px-48"
         initial="rest"
@@ -44,13 +47,11 @@ const ProjectPage = () => {
             variants={image}></motion.div>
         </div>
         <motion.div variants={link}>
-          <p className="project-link text-sm">
-            Github: <Link href="https://github.com/">Project link</Link>
-          </p>
+          <div className="project-link text-sm">
+            <GithubLink link="https://github.com/Chunl3e666" text="GitHub" />
+          </div>
         </motion.div>
       </motion.div>
     </section>
   )
 }
-
-export default ProjectPage

@@ -1,7 +1,6 @@
-import React from "react"
-import Avatar from "../../avatar/avatar"
+import { Avatar } from "@/src/widgets/avatar"
 
-const AboutPage = () => {
+export const AboutPage = () => {
   return (
     <div className="grid grid-flow-col items-center justify-center h-96 px-48">
       <p className="text-balance text-center">
@@ -15,9 +14,7 @@ const AboutPage = () => {
         laborum fuga iusto beatae culpa nulla error. Porro ullam dolorem consequatur
         exercitationem sunt soluta nulla eligendi minima!
       </p>
-      <Avatar />
+      <Avatar/>
     </div>
   )
 }
-
-export default AboutPage

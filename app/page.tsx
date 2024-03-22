@@ -1,20 +1,21 @@
-import AboutPage from "@/src/components/pagesPreview/aboutPage/aboutPage"
-import ProjectPage from "@/src/components/pagesPreview/projectsPage/projectPage"
+
+import { AboutPage } from "@/src/components/pagesPreview/aboutPage/aboutPage"
 import РaralaxBackground from "@/src/components/paralaxBackground/paralaxBackground"
+import { ProjectPreviewListItem } from "@/src/widgets/projectPreviewListItem"
 
 export default function Home() {
   return (
     <main className="">
       <AboutPage />
-      <ProjectPage />
-      <ProjectPage />
-      <ProjectPage />
-      <ProjectPage />
-      <ProjectPage />
-      <ProjectPage />
-      <ProjectPage />
-      <ProjectPage />
-
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
+      <ProjectPreviewListItem/>
       {/* <РaralaxBackground/> */}
     </main>
   )

@@ -1,10 +1,10 @@
 "use client";
-import Button from "../../button/button";
-import NavMenu from "../../navMenu/navMenu";
+import NavMenu from "../../../components/navMenu/navMenu";
 import { usePathname } from "next/navigation";
-import Toggler from "../../toggler/toggler";
+import Button from "@/src/shared/ui/button";
+import Toggler from "@/src/shared/ui/toggler";
 
-const Header = () => {
+export const Header = () => {
   const pathname = usePathname();
   const menuItems = [
     { name: "About", img: "/icons/profile.png", url: "/about" },
@@ -36,4 +36,3 @@ const Header = () => {
   );
 };
 
-export default Header;
