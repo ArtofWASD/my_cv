@@ -1,17 +1,17 @@
-"use client";
-import NavMenu from "../../../components/navMenu/navMenu";
-import { usePathname } from "next/navigation";
-import Button from "@/src/shared/ui/button";
-import Toggler from "@/src/shared/ui/toggler";
+"use client"
+import NavMenu from "../../../components/navMenu/navMenu"
+import { usePathname } from "next/navigation"
+import Button from "@/src/shared/ui/button"
+import Toggler from "@/src/shared/ui/toggler"
 
 export const Header = () => {
-  const pathname = usePathname();
+  const pathname = usePathname()
   const menuItems = [
     { name: "About", img: "/icons/profile.png", url: "/about" },
     { name: "Projects", img: "/icons/projects.png", url: "/projects" },
     { name: "Blog", img: "/icons/blog.png", url: "/blog" },
     { name: "Contacts", img: "/icons/contact.png", url: "/contacts" },
-  ];
+  ]
   return (
     <header className="grid">
       <div className="justify-self-end pt-2 pr-2">
@@ -21,7 +21,6 @@ export const Header = () => {
         <div className="py-4">
           <NavMenu menuItems={menuItems} />
         </div>
-
         {pathname == "/" ? (
           <></>
         ) : (
@@ -33,6 +32,5 @@ export const Header = () => {
         )}
       </div>
     </header>
-  );
-};
-
+  )
+}
