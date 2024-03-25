@@ -10,7 +10,7 @@ interface INavItems {
   url: string
 }
 
-const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
+export const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
   const icon = {
     initial: { opacity: 0, y: 0 },
     hover: { scale: 1.2, y: -35, opacity: 1, transition: { duration: 0.5 } },
@@ -47,4 +47,3 @@ const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
   )
 }
 
-export default NavMenu

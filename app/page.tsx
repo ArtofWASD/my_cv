@@ -1,11 +1,10 @@
-
-import { AboutPage } from "@/src/components/pagesPreview/aboutPage/aboutPage"
+import { AboutPagePrewiev } from "@/src/widgets/aboutPagePreview"
 import { ProjectPreviewListItem } from "@/src/widgets/projectPreviewListItem"
 
 export default function Home() {
   return (
     <main className="">
-      <AboutPage />
+      <AboutPagePrewiev />
       <ProjectPreviewListItem/>
       <ProjectPreviewListItem/>
       <ProjectPreviewListItem/>

@@ -1,6 +1,6 @@
 import { Avatar } from "@/src/widgets/avatar"
 
-export const AboutPage = () => {
+export const AboutPagePrewiev = () => {
   return (
     <div className="grid grid-flow-col items-center justify-center h-96 px-48">
       <p className="text-balance text-center">

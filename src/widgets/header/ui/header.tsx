@@ -1,8 +1,8 @@
 "use client"
-import NavMenu from "../../../components/navMenu/navMenu"
 import { usePathname } from "next/navigation"
 import Button from "@/src/shared/ui/button"
 import Toggler from "@/src/shared/ui/toggler"
+import { NavMenu } from "../../navMenu/ui/navMenu"
 
 export const Header = () => {
   const pathname = usePathname()

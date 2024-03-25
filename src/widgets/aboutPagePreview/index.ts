@@ -1,0 +1,1 @@
+export { AboutPagePrewiev } from './ui/aboutPagePreview';

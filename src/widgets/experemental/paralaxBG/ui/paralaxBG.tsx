@@ -3,7 +3,7 @@ import React, { useRef } from "react"
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 
-const РaralaxBackground = () => {
+export const РaralaxBackground = () => {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -49,5 +49,3 @@ const РaralaxBackground = () => {
     </div>
   )
 }
-
-export default РaralaxBackground
