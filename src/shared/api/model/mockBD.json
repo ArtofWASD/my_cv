@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Вожские огни",
+    "body": "body 1",
+    "imageUrl": "",
+    "ginhubUrl": "someurl"
+  },
+  {
+    "id": 2,
+    "title": "Бургерная на краю вселенно",
+    "body": "body 2",
+    "imageUrl": "",
+    "ginhubUrl": "someurl"
+  },
+  {
+    "id": 3,
+    "title": "Справочник Транзит",
+    "body": "body 3",
+    "imageUrl": "",
+    "ginhubUrl": "someurl"
+  },
+  {
+    "id": 4,
+    "title": "title 4",
+    "body": "body 4",
+    "imageUrl": "",
+    "ginhubUrl": "someurl"
+  },
+  {
+    "id": 5,
+    "title": "title 5",
+    "body": "body 5",
+    "imageUrl": "",
+    "ginhubUrl": "someurl"
+  },
+  {
+    "id": 6,
+    "title": "title 6",
+    "body": "body 6",
+    "imageUrl": "",
+    "ginhubUrl": "someurl"
+  }
+]
