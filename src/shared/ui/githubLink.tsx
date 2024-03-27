@@ -4,8 +4,8 @@ import React from 'react'
 
 export const GithubLink = ({link, text}:{link: string, text: string}) => {
   return (
-    <div>
-      <p>Github: <Link href={link}>{text}</Link></p>
+    <div className="flex gap-1">
+      <p className="font-bold">Github</p>: <Link href={link}>{text}</Link>
     </div>
   )
 }
