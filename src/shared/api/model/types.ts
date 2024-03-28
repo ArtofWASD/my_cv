@@ -1,4 +1,4 @@
-interface IStackItem {
+export interface IStackItem {
   title: string
   imgUrl: string
 }
@@ -10,6 +10,6 @@ export interface IPrewievProjectListItem {
     body: string
     imageUrl: string
     ginhubUrl: string
-    stack: IStackItem[]
+    stack: [IStackItem]
   }
 }

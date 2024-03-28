@@ -2,7 +2,7 @@
 import { GithubLink } from "@/src/shared/ui/githubLink"
 import { motion } from "framer-motion"
 import { IPrewievProjectListItem } from "@/src/shared/api/model/types"
-import Image from "next/image"
+import { UsedTechInPorject } from "@/src/shared/ui/usedTechInPorject"
 export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
   const text = {
     rest: { x: 0, y: 0 },
@@ -39,16 +39,16 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
             className="project-image w-72 h-72 bg-blue-500 rounded-2xl"
             variants={image}></motion.div>
         </div>
-        <div className="project-footer flex gap-2">
+        <div className="project-footer flex gap-2 items-center pl-12">
           <motion.div variants={link} className="project-link text-sm">
             <GithubLink link={item.ginhubUrl} text="GitHub" />
           </motion.div>
-          <motion.div variants={link} className="project-link text-sm flex gap-2">
+          <motion.div variants={link} className="project-link text-sm flex gap-2 items-center">
             <p className="font-bold">Stack: </p>
-            {item.stack.map((item) => (
-              
-                <div key={item.title}>{item.title}</div>
-              
+            {item.stack.map((techItem, index) => (
+              <div key={index}>
+                <UsedTechInPorject item={techItem} />
+              </div>
             ))}
           </motion.div>
         </div>
