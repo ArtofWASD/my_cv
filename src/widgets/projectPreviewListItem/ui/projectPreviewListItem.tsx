@@ -23,7 +23,7 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
     hover: { x: 0, opacity: 1, transition: { duration: 0.5 } },
   }
   return (
-    <section className="project-preview z-100">
+    <section className="project-preview z-100 py-4">
       <p className="project-header text-center sticky text-2xl pt-1">{item.title}</p>
       <motion.div
         className="grid items-center h-96 px-48"
@@ -39,11 +39,8 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
             className="project-image w-72 h-72 bg-blue-500 rounded-2xl"
             variants={image}></motion.div>
         </div>
-        <div className="project-footer flex gap-2 items-center pl-12">
-          <motion.div variants={link} className="project-link text-sm">
-            <GithubLink link={item.ginhubUrl} text="GitHub" />
-          </motion.div>
-          <motion.div variants={link} className="project-link text-sm flex gap-2 items-center">
+        <div className="project-footer flex gap-2 items-center justify-between pl-12">
+        <motion.div variants={link} className="project-link text-sm flex gap-2 items-center">
             <p className="font-bold">Stack: </p>
             {item.stack.map((techItem, index) => (
               <div key={index}>
@@ -51,6 +48,10 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
               </div>
             ))}
           </motion.div>
+          <motion.div variants={link} className="project-link text-sm">
+            <GithubLink link={item.ginhubUrl} text="GitHub" />
+          </motion.div>
+
         </div>
       </motion.div>
     </section>

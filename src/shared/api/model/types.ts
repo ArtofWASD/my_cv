@@ -13,3 +13,12 @@ export interface IPrewievProjectListItem {
     stack: IStackItem[]
   }
 }
+
+export interface IPageParams {
+  params: {
+    type: string;
+  };
+  searchParams?: {
+    page: number;
+  };
+}
