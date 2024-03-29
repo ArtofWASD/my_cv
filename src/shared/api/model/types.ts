@@ -15,7 +15,8 @@ export interface IPrewievProjectListItem {
   }
 }
 
-export interface PageProps {
+
+export type PageProps = {
   params: {
     type: string;
   };
