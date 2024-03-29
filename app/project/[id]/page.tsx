@@ -1,6 +1,6 @@
 import { PageProps } from "@/src/shared/api/model/types"
 
-export const ProjectPage = async ({params, searchParams}:PageProps) => {
+export const ProjectPage = async ({params}:{params:{id:string}}) => {
   return (
     <div>
       
