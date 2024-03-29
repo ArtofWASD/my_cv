@@ -1,6 +1,6 @@
-import { IPageParams } from "@/src/shared/api/model/types"
+import { PageProps } from "@/src/shared/api/model/types"
 
-export const ProjectPage = async ({params, searchParams}:IPageParams) => {
+export const ProjectPage = async ({params, searchParams}:PageProps) => {
   return (
     <div>
       

@@ -1,3 +1,4 @@
+
 export interface IStackItem {
   title: string
   imgUrl: string
@@ -14,7 +15,7 @@ export interface IPrewievProjectListItem {
   }
 }
 
-export interface IPageParams {
+export interface PageProps {
   params: {
     type: string;
   };
