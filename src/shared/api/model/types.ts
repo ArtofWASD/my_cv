@@ -10,6 +10,6 @@ export interface IPrewievProjectListItem {
     body: string
     imageUrl: string
     ginhubUrl: string
-    stack: [IStackItem]
+    stack: IStackItem[]
   }
 }
