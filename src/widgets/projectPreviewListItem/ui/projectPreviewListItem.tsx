@@ -51,7 +51,6 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
           <motion.div variants={link} className="project-link text-sm">
             <GithubLink link={item.ginhubUrl} text="GitHub" />
           </motion.div>
-
         </div>
       </motion.div>
     </section>
