@@ -1,10 +1,8 @@
-import { PageProps } from "@/src/shared/api/model/types"
+'use client'
+import { useParams } from "next/navigation"
 
-const ProjectPage = async () => {
-  return (
-    <>
-      
-    </>
-  )
+const ProjectPage =  () => {
+  const params = useParams<{ id: string }>()
+  return <>{params?.id}</>
 }
- export default ProjectPage
+export default ProjectPage
