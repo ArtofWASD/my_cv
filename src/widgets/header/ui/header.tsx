@@ -16,7 +16,7 @@ export const Header = () => {
       <div className="justify-self-end pt-2 pr-2">
         <Toggler />
       </div>
-      <div className="grid grid-cols-[94%_5%] justify-items-center items-end">
+      <div className="grid lg:grid-cols-[94%_5%]  justify-items-center items-end">
         <div className="py-4">
           <NavMenu menuItems={menuItems} />
         </div>

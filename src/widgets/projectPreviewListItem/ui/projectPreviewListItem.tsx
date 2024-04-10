@@ -40,7 +40,6 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
               variants={text}>
               {item.body}
           </motion.div>
-          
             <motion.div
               layout
               className="project-image w-72 h-72 bg-blue-500 bg-opacity-50 rounded-2xl relative drop-shadow-2xl"
@@ -51,8 +50,7 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
                 fill
                 className="-rotate-90 rounded-2xl bg-contain bg-center bg-no-repeat object-scale-down h-48 w-48"
               />
-            </motion.div>
-            
+            </motion.div>    
           </div>
           </Link>
           <div className="project-footer flex gap-2 items-center justify-between pl-12">
