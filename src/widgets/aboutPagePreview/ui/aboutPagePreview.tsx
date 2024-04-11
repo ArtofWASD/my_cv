@@ -2,7 +2,7 @@ import { Avatar } from "@/src/widgets/avatar"
 
 export const AboutPagePrewiev = () => {
   return (
-    <div className="grid md:grid-flow-col xl:grid-cols-[75%_30%] md:grid-cols-[60%_30%] grid-flow-row items-center justify-center h-96 lg:px-24 md:px-10 px-4 gap-12 mt-10 lg:gap-2 ">
+    <div className="grid md:grid-flow-col xl:grid-cols-[75%_30%] md:grid-cols-[60%_40%] grid-flow-row items-center justify-center h-96 lg:px-24 md:px-10 px-4 gap-12 mt-10 lg:gap-2 ">
       <p className="text-balance text-center text-sm lg:text-base">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ratione quam ut
         corrupti reprehenderit tempora, minima tenetur doloremque, animi ad distinctio
