@@ -7,11 +7,11 @@ export default function Home() {
   return (
     <main className="">
       <AboutPagePrewiev />
-      {/* {db && (
+      {db && (
         db.map((project) => (
           <ProjectPreviewListItem key={project.id} item={project}/>
         ))
-      ) } */}
+      ) }
     </main>
   )
 }
