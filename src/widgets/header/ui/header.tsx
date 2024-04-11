@@ -7,9 +7,9 @@ import { NavMenu } from "../../navMenu/ui/navMenu"
 export const Header = () => {
   const pathname = usePathname()
   const menuItems = [
-    { name: "About", img: "/icons/profile.png", url: "/about" },
-    { name: "Blog", img: "/icons/blog.png", url: "/blog" },
-    { name: "Contacts", img: "/icons/contact.png", url: "/contacts" },
+    { name: "О себе", img: "/icons/profile.png", url: "/about" },
+    { name: "Блог", img: "/icons/blog.png", url: "/blog" },
+    { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ]
   return (
     <header className="grid">

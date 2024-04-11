@@ -36,7 +36,7 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
         <Link href={`/project/${item.id}`}>
           <div className="project-body grid grid-flow-col justify-center">
             <motion.div
-              className="text-center text-balance place-self-center md:place-self-start md:text-base text-sm"
+              className="text-center text-balance place-self-center md:place-self-start md:text-base text-sm py-2 md:py-0"
               variants={text}>
               {item.body}
             </motion.div>
