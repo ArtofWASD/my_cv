@@ -2,7 +2,7 @@ import { Avatar } from "@/src/widgets/avatar"
 
 export const AboutPagePrewiev = () => {
   return (
-    <div className="grid lg:grid-flow-col grid-flow-row items-center justify-center h-96 lg:px-48 px-4 gap-16 lg:gap-2 ">
+    <div className="grid md:grid-flow-col xl:grid-cols-[75%_30%] md:grid-cols-[60%_30%] grid-flow-row items-center justify-center h-96 lg:px-24 md:px-10 px-4 gap-12 mt-10 lg:gap-2 ">
       <p className="text-balance text-center text-sm lg:text-base">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ratione quam ut
         corrupti reprehenderit tempora, minima tenetur doloremque, animi ad distinctio
@@ -14,7 +14,9 @@ export const AboutPagePrewiev = () => {
         laborum fuga iusto beatae culpa nulla error. Porro ullam dolorem consequatur
         exercitationem sunt soluta nulla eligendi minima!
       </p>
-      <Avatar/>
+      <div className="row-start-1 row-end-2 ">
+        <Avatar />
+      </div>
     </div>
   )
 }

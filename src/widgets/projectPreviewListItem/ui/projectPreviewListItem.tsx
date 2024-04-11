@@ -5,13 +5,14 @@ import { IPrewievProjectListItem } from "@/src/shared/api/model/types"
 import { UsedTechInPorject } from "@/src/shared/ui/usedTechInPorject"
 import Link from "next/link"
 import Image from "next/image"
+
 export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
   const text = {
     rest: { x: 0, y: 0 },
     hover: { x: -28, opacity: 1, transition: { duration: 0.5 } },
   }
   const image = {
-    rest: { x: 100, opacity: 0 },
+    rest: { x: 300, opacity: 0 },
     hover: {
       x: 0,
       opacity: 1,
@@ -27,22 +28,21 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
   return (
     <section className="project-preview z-100 py-4">
       <p className="project-header text-center sticky text-2xl pt-1">{item.title}</p>
-      
         <motion.div
           className="grid items-center h-96 px-48"
           initial="rest"
           whileHover="hover"
         animate="rest">
         <Link href={`/project/${item.id}`}>
-          <div className="project-body grid grid-flow-col">
+          <div className="project-body grid grid-flow-col justify-center">
             <motion.div
-              className="text-center text-balance place-self-start"
+              className="text-center text-balance place-self-start md:text-base text-sm"
               variants={text}>
               {item.body}
           </motion.div>
             <motion.div
               layout
-              className="project-image w-72 h-72 bg-blue-500 bg-opacity-50 rounded-2xl relative drop-shadow-2xl"
+              className="project-image hidden md:block w-72 h-72 bg-blue-500 bg-opacity-50 rounded-2xl relative drop-shadow-2xl"
               variants={image}>
               <Image
                 src={item.imageUrl}
