@@ -1,4 +1,4 @@
-import { App } from "@/src/pages/_app"
+import { App } from "@/src/pages/app"
 export default function Home() {
   return (
     <main className="">
