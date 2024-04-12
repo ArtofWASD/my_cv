@@ -1,8 +1,8 @@
-import { App } from "@/src/pages/app"
+import { AppPage } from "@/src/pages/appPage"
 export default function Home() {
   return (
     <main className="">
-      <App />
+      <AppPage />
     </main>
   )
 }
