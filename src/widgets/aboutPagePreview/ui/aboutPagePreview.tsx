@@ -1,7 +1,7 @@
 import { Avatar } from "@/src/widgets/avatar"
 export const AboutPagePrewiev = () => {
   return (
-    <div className="grid md:grid-flow-col xl:grid-cols-[75%_30%] md:grid-cols-[60%_40%] grid-flow-row items-center justify-center h-auto md:h-96 lg:px-24 md:px-10 px-4 gap-12 mt-10 lg:gap-2 ">
+    <div className="grid grid-flow-row md:grid-flow-col xl:grid-cols-[50%_30%] md:grid-cols-[60%_40%] items-center justify-center md:px-10 gap-12 mt-10 lg:gap-2 ">
       <p className="text-balance text-center text-sm lg:text-base">
         Привет, я Леонид, мне 37 лет и я фронтенд разработчик. Живу в Санкт-Петербурге. В
         работе изспользую React, Next.js, Typescript и другие библиотеки. На этом сайте

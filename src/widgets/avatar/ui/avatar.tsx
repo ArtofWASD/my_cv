@@ -5,7 +5,7 @@ export const Avatar = () => {
   return (
     <div className="flex justify-center items-center">
       <motion.div
-        className="box w-52 h-52 bg-slate-600 absolute bg-opacity-40 z-10 rounded-2xl"
+        className="box lg:w-52 lg:h-52 w-36 h-36 bg-slate-600 absolute bg-opacity-40 z-10 rounded-2xl"
         animate={{
           rotate: [180, 0],
         }}
@@ -22,7 +22,7 @@ export const Avatar = () => {
         }}
       />
       <motion.div
-        className="box w-72 h-72 bg-blue-500 bg-opacity-80 relative z-0 rounded-2xl"
+        className="box lg:w-72 lg:h-72 w-56 h-56 bg-blue-500 bg-opacity-80 relative z-0 rounded-2xl"
         animate={{
           rotate: [0, 180],
         }}

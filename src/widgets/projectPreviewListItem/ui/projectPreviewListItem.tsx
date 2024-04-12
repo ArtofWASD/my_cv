@@ -27,17 +27,25 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
     hover: { x: 0, opacity: 1, transition: { duration: 0.5 } },
   }
   return (
-    <section className="project-preview py-4 grid items-center">
-      <p className="project-header text-center sticky text-2xl pt-1">{item.title}</p>
+    <section className="project-preview py-4 grid items-center justify-center">
+      <p className="project-header text-center sticky md:text-xl lg:text-2xl pb-2 lg:pb-8 font-bold">{item.title}</p>
+      <div className=" md:hidden w-72 h-72 bg-opacity-50 rounded-2xl drop-shadow-2xl justify-self-center">
+        <Image
+          src={item.imageUrl}
+          alt={item.title}
+          fill
+          className="rounded-2xl bg-contain bg-center bg-no-repeat object-scale-down h-48 w-48 px-2"
+        />
+      </div>
       <motion.div
-        className="grid items-center h-auto md:h-96 px-2 md:px-48"
+        className="grid items-center md:h-96 px-2 md:px-48"
         initial="rest"
         whileHover="hover"
         animate="rest">
         <Link href={`/project/${item.id}`}>
           <div className="project-body grid grid-flow-col justify-center">
             <motion.div
-              className="text-center text-balance place-self-center md:place-self-start md:text-base text-sm py-2 md:py-0"
+              className="text-center md:text-start text-balance place-self-center md:place-self-start md:text-base text-sm lg:w-120 xl:w-128 lg:pl-9 pl-0 mx-5"
               variants={text}>
               {item.body}
             </motion.div>
@@ -54,7 +62,7 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
             </motion.div>
           </div>
         </Link>
-        <div className="project-footer flex gap-2 items-center justify-between pl-12">
+        <div className="project-footer flex gap-2 items-center justify-between">
           <motion.div
             variants={link}
             className="project-link text-sm  gap-2 items-center hidden md:flex">
