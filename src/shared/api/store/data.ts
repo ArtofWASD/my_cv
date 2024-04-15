@@ -7,11 +7,17 @@ export const useProjectsData = create(
     persist(
       (set) => ({
         data: [],
+        blogPosts:[],
         getData: async () => {
           const supabase = createClient()
           const { data } = await supabase.from("projects").select("*")
           set({ data })
         },
+        getPosts:async ()=>{
+          const supabase = createClient()
+          const { data } = await supabase.from("blog").select("*")
+          set({blogPosts:data})
+        }
       }),
       { name: "data" },
     ),
