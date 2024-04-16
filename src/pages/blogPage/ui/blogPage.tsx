@@ -1,6 +1,7 @@
+'use client'
 import { TypeData } from "@/src/shared/api/model/types"
 
-const BlogPage = async ({data}: {data: TypeData[]}) => {
+const BlogPage = ({data} : { data: TypeData[] }) => {  
   return (
     <div className="grid justify-center items-center">
       {data &&

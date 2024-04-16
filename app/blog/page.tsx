@@ -5,7 +5,7 @@ import { createNextServerClient } from '@/src/shared/api/store/supabaseServerCli
 
 const Blog = async () => {
   const supabase = createNextServerClient()
-  const { data: posts } = await supabase.from("blog").select("*")
+  const { data: posts } = await supabase.from("blog").select("*")  
   return (
     <>
       <BlogPage data={posts as TypeData[]}/>
