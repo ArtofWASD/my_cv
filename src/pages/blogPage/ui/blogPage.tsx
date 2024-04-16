@@ -1,4 +1,4 @@
-'use client'
+
 import { TypeData } from "@/src/shared/api/model/types"
 
 const BlogPage = ({data} : { data: TypeData[] }) => {  
