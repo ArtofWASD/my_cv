@@ -4,7 +4,7 @@ import { createClient } from "@/src/shared/api/store/supabaseClient"
 import { createNextServerClient } from '@/src/shared/api/store/supabaseServerClient'
 
 const Blog = async () => {
-  const supabase = createNextServerClient()
+  const supabase = createClient()
   const { data: posts } = await supabase.from("blog").select("*")  
   return (
     <>
