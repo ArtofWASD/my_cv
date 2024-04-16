@@ -1,11 +1,5 @@
-import { createClient } from "@/src/shared/api/store/supabaseClient"
+import { TypeData } from "@/src/shared/api/model/types"
 
-type TypeData = {
-  id: number
-  title: string
-  body: string
-  created_at: Date
-}
 const BlogPage = async ({data}: {data: TypeData[]}) => {
   return (
     <div className="grid justify-center items-center">

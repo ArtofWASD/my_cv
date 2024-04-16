@@ -24,3 +24,9 @@ export type PageProps = {
     page: number;
   };
 }
+export type TypeData = {
+  id: number
+  title: string
+  body: string
+  created_at: Date
+}

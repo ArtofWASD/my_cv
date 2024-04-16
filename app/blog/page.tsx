@@ -1,4 +1,5 @@
 import BlogPage from '@/src/pages/blogPage/ui/blogPage'
+import { TypeData } from '@/src/shared/api/model/types'
 import { createClient } from "@/src/shared/api/store/supabaseClient"
 
 const Blog = async () => {
@@ -6,7 +7,7 @@ const Blog = async () => {
   const { data: posts } = await supabase.from("blog").select("*")
   return (
     <>
-      <BlogPage data={posts}/>
+      <BlogPage data={posts as TypeData[]}/>
     </>
   )
 }
