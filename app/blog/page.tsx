@@ -1,3 +1,4 @@
+'use client'
 import BlogPage from '@/src/pages/blogPage/ui/blogPage'
 import React from 'react'
 
