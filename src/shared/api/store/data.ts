@@ -1,6 +1,6 @@
 import { create } from "zustand"
 import { devtools, persist } from "zustand/middleware"
-import { createClient } from "./supabaseClient"
+import { createClient } from "../supabase/supabaseClient"
 
 export const useProjectsData = create(
   devtools(
