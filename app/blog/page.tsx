@@ -1,11 +1,12 @@
-'use client'
 import BlogPage from '@/src/pages/blogPage/ui/blogPage'
-import React from 'react'
+import { createClient } from "@/src/shared/api/store/supabaseClient"
 
-const Blog = () => {
+const Blog = async () => {
+  const supabase = createClient()
+  const { data: posts } = await supabase.from("blog").select("*")
   return (
     <>
-      <BlogPage/>
+      <BlogPage data={posts}/>
     </>
   )
 }
