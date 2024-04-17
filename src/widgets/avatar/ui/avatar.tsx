@@ -1,11 +1,11 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export const Avatar = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex items-center justify-center">
       <motion.div
-        className="box lg:w-52 lg:h-52 w-36 h-36 bg-slate-600 absolute bg-opacity-40 z-10 rounded-2xl"
+        className="box absolute z-10 h-36 w-36 rounded-2xl bg-slate-600 bg-opacity-40 lg:h-52 lg:w-52"
         animate={{
           rotate: [180, 0],
         }}
@@ -22,7 +22,7 @@ export const Avatar = () => {
         }}
       />
       <motion.div
-        className="box lg:w-72 lg:h-72 w-56 h-56 bg-blue-500 bg-opacity-80 relative z-0 rounded-2xl"
+        className="box relative z-0 h-56 w-56 rounded-2xl bg-blue-500 bg-opacity-80 lg:h-72 lg:w-72"
         animate={{
           rotate: [0, 180],
         }}
@@ -38,10 +38,7 @@ export const Avatar = () => {
           },
         }}
       />
-      <div className="absolute z-20 text-white">
-        Здесь будет ваще лицо
-      </div>
+      <div className="absolute z-20 text-white">Здесь будет ваще лицо</div>
     </div>
-  )
-}
-
+  );
+};

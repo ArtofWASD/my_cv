@@ -8,9 +8,9 @@ const Blog = async () => {
   const supabase = createClient(cookieStore);
   const { data: posts } = await supabase.from("blog").select("*");
   return (
-    <>
+    <main>
       <BlogPage data={posts as TypeData[]} />
-    </>
+    </main>
   );
 };
 
