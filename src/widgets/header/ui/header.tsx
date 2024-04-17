@@ -12,19 +12,19 @@ export const Header = () => {
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
   return (
-    <header className="grid">
+    <header className="grid bg-orange-200">
       <div className="justify-self-end pr-2 pt-2">
         <Toggler />
       </div>
-      <div className="grid items-end  justify-items-center lg:grid-cols-[94%_5%]">
-        <div className="py-4">
+      <div className="grid items-end justify-items-center lg:grid-cols-[95%_5%]">
+        <div className="ml-20 py-4">
           <NavMenu menuItems={menuItems} />
         </div>
         {pathname == "/" ? (
           <></>
         ) : (
           <>
-            <div className="self-center justify-self-end pt-4">
+            <div className="self-center pt-4">
               <Button />
             </div>
           </>
