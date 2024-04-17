@@ -17,17 +17,15 @@ export const Header = () => {
         <Toggler />
       </div>
       <div className="grid items-end justify-items-center lg:grid-cols-[95%_5%]">
-        <div className="ml-20 py-4">
+        <div className="py-4 lg:ml-20">
           <NavMenu menuItems={menuItems} />
         </div>
         {pathname == "/" ? (
           <></>
         ) : (
-          <>
-            <div className="self-center pt-4">
-              <Button />
-            </div>
-          </>
+          <div className="self-center pt-4">
+            <Button />
+          </div>
         )}
       </div>
     </header>
