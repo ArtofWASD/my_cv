@@ -23,7 +23,7 @@ export const Header = () => {
         {pathname == "/" ? (
           <></>
         ) : (
-          <div className="self-center pt-4">
+          <div className="none self-center  pt-4 lg:block">
             <Button />
           </div>
         )}

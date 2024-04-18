@@ -8,7 +8,7 @@ const Blog = async () => {
   const supabase = createClient(cookieStore);
   const { data: posts } = await supabase.from("blog").select("*");
   return (
-    <main className="bg-gradient-to-b from-orange-200 to-blue-500">
+    <main className="">
       <Suspense fallback={<div>Loading...</div>}>
         <BlogPage data={posts as TypeData[]} />
       </Suspense>

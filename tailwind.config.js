@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'footer': "url('/images/footer.jpg')",
-        'main': "url('/images/main.jpg')",
+        'main': "url('/images/main.png')",
       },
       width: {
         '128': '60rem',
