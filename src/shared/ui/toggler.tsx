@@ -18,7 +18,7 @@ const Toggler = () => {
         />
         <span
           className={`label flex items-center text-sm font-medium ${
-            isChecked ? "text-black" : "text-blue-500"
+            isChecked ? "text-black" : "text-white"
           } `}
         >
           Ру
@@ -36,7 +36,7 @@ const Toggler = () => {
         </span>
         <span
           className={`label flex items-center text-sm font-medium ${
-            isChecked ? "text-blue-500" : "text-black"
+            isChecked ? "text-white" : "text-black"
           } `}
         >
           En
