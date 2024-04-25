@@ -25,5 +25,6 @@ export type TypeData = {
   id: number;
   title: string;
   body: string;
+  imgUrl: string;
   created_at: Date;
 };

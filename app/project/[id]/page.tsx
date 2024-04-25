@@ -1,12 +1,13 @@
-"use client";
+'use client'
+import ProjectPage from "@/src/pages/projectPage/projectPage";
 import { useParams } from "next/navigation";
-
-const ProjectPage = () => {
-  const params = useParams<{ id: string }>();
+import { Suspense } from "react";
+const Project = () => {
+  const params = useParams<{ id: string }>();  
   return (
-    <main className="project-page flex items-center justify-center">
-      page id:{params?.id}
-    </main>
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProjectPage params={params} />
+    </Suspense>
   );
 };
-export default ProjectPage;
+export default Project;
