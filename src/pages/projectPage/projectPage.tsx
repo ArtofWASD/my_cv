@@ -1,8 +1,10 @@
-const ProjectPage = ({ params }: { params: { id: string } | null }) => {
-    //TODO: добавить загрузку проекта по его id 
+import { TypeData } from "@/src/shared/api/model/types";
+
+const ProjectPage = ({ data }: { data: TypeData[] }) => {
+  //TODO: добавить загрузку проекта по его id  
   return (
     <main className="project-page flex items-center justify-center">
-      {params?.id}
+      {data && data.map((item) => <div key={item.id}>{item.title}</div>)}
     </main>
   );
 };
