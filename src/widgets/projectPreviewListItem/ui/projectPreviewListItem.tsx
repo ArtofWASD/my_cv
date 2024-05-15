@@ -47,12 +47,11 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
       >
         <Link href={`/project/${item.id}`}>
           <div className="project-body grid grid-flow-col justify-center">
-            <motion.div
+            <div
               className="mx-5 place-self-center text-balance pl-0 text-center text-sm md:place-self-start md:text-start md:text-base lg:w-120 lg:pl-9 xl:w-128"
-              variants={text}
             >
               {item.body}
-            </motion.div>
+            </div>
             <motion.div
               layout
               className="project-image relative hidden h-72 w-72 rounded-2xl bg-blue-500 bg-opacity-50 drop-shadow-2xl md:block"

@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const Avatar = () => {
   return (
     <div className="flex items-center justify-center">
       <motion.div
-        className="box absolute z-10 h-36 w-36 rounded-2xl bg-slate-600 bg-opacity-40 lg:h-52 lg:w-52"
+        className="box absolute z-10 h-36 w-36 rounded-2xl bg-slate-200 bg-opacity-40 lg:h-52 lg:w-52"
         animate={{
           rotate: [180, 0],
         }}
@@ -38,7 +39,15 @@ export const Avatar = () => {
           },
         }}
       />
-      <div className="absolute z-20 text-white">Здесь будет ваще лицо</div>
+      <div className="absolute z-20 text-white">
+  
+        <Image
+          src="/icons/avatar.png"
+          width={300}
+          height={300}
+          alt="Picture of the author"
+        />
+      </div>
     </div>
   );
 };
