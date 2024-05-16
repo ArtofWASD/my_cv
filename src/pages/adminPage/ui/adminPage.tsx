@@ -1,7 +1,10 @@
+import { AdminMenu } from "@/src/widgets/admin/adminMenu"
+
 const AdminPage = () => {
   return (
     <div>
-      Админка
+      <p className="text-center">Админка</p>
+      <AdminMenu/>
     </div>
   )
 }
