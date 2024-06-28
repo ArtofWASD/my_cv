@@ -8,20 +8,23 @@ import Image from "next/image";
 import { ProjectPreviewListFooter } from "./projectPreviewListFooter";
 
 export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
-  const text = {
-    rest: { x: 0, y: 0 },
-    hover: { x: -28, opacity: 1, transition: { duration: 0.5 } },
-  };
-  const image = {
-    rest: { x: 100, opacity: 0 },
-    hover: {
-      x: 0,
-      opacity: 1,
-      scale: 1.2,
-      transition: { duration: 0.5 },
-      rotate: [45, 90],
-    },
-  };
+  // TODO: Решить что с этим делать дальше ?
+
+  // const text = {
+  //   rest: { x: 0, y: 0 },
+  //   hover: { x: -28, opacity: 1, transition: { duration: 0.5 } },
+  // };
+  // const image = {
+  //   rest: { x: 100, opacity: 0 },
+  //   hover: {
+  //     x: 0,
+  //     opacity: 1,
+  //     scale: 1.2,
+  //     transition: { duration: 0.5 },
+  //     rotate: [45, 90],
+  //   },
+  // };
+  
   const link = {
     rest: { x: 100, opacity: 0 },
     hover: { x: 0, opacity: 1, transition: { duration: 0.5 } },
@@ -47,29 +50,23 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
       >
         <Link href={`/project/${item.id}`}>
           <div className="project-body grid grid-flow-col justify-center">
-            <div
-              className="mx-5 place-self-center text-balance pl-0 text-center text-sm md:place-self-start md:text-start md:text-base lg:w-120 lg:pl-9 xl:w-128"
-            >
+            <div className="mx-5 place-self-center text-balance pl-0 text-center text-sm md:place-self-start md:text-start md:text-base lg:w-120 lg:pl-9 xl:w-128">
               {item.body}
             </div>
-            <motion.div
-              layout
-              className="project-image relative hidden h-72 w-72 rounded-2xl bg-blue-500 bg-opacity-50 drop-shadow-2xl md:block"
-              variants={image}
-            >
+            <div className="project-image relative hidden h-72 w-72 rounded-2xl bg-blue-500 bg-opacity-50 drop-shadow-2xl md:block">
               <Image
                 src={item.imageUrl}
                 alt={item.title}
                 fill
-                className="h-48 w-48 -rotate-90 rounded-2xl bg-contain bg-center bg-no-repeat object-scale-down"
+                className="h-48 w-48 rounded-2xl bg-contain bg-center bg-no-repeat object-scale-down"
               />
-            </motion.div>
+            </div>
           </div>
         </Link>
-        <div className="project-footer flex items-center justify-between gap-2">
+        <div className="project-footer flex items-center justify-between gap-2 ">
           <motion.div
             variants={link}
-            className="project-link hidden  items-center gap-2 text-sm md:flex"
+            className="project-link hidden  items-center gap-2 text-sm md:flex ml-12"
           >
             <span className="font-bold">Stack: </span>
             {item.stack.map((techItem, index) => (
