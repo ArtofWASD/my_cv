@@ -43,8 +43,8 @@ export const Avatar = () => {
   
         <Image
           src="/icons/avatar.png"
-          width={300}
-          height={300}
+          width={200}
+          height={200}
           alt="Picture of the author"
         />
       </div>

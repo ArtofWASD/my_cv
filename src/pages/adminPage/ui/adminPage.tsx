@@ -1,12 +1,15 @@
 import { AdminMenu } from "@/src/widgets/admin/adminMenu";
+import { AdminProjectsList } from "@/src/widgets/admin/adminProjectsList/ui";
 
 const AdminPage = () => {
   return (
     <>
-      <p className="text-center">Админка</p>
       <div className="admin-page grid grid-cols-[20%_80%]">
-        <div className="left-side_menu bg-slate-400 opacity-45 h-screen">
+        <div className="left-side_menu h-screen bg-slate-400 opacity-45">
           <AdminMenu />
+        </div>
+        <div>
+          <AdminProjectsList />
         </div>
       </div>
     </>
