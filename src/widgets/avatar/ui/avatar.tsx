@@ -40,7 +40,6 @@ export const Avatar = () => {
         }}
       />
       <div className="absolute z-20 text-white">
-  
         <Image
           src="/icons/avatar.png"
           width={200}
