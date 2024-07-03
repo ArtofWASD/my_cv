@@ -12,7 +12,7 @@ export const Header = () => {
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
   return (
-    <header className="grid bg-gradient-to-t from-white to-blue-500">
+    <header className="grid bg-main-blue">
       <div className="justify-self-end pr-2 pt-2">
         <Toggler />
       </div>

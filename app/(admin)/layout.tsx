@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Header } from "@/src/widgets/header/index";
 import { Footer } from "@/src/widgets/footer/index";
-import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
-
+import "@/app/globals.css";
 export const metadata: Metadata = {
-  title: "Chunl3e666 CV",
-  description: "Моё резюме",
+  title: "Admin DashBoard",
+  description: "Админ панель",
 };
-
+const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
         {children}
         <Footer />
       </body>

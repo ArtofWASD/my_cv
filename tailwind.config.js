@@ -17,6 +17,13 @@ module.exports = {
       width: {
         '128': '60rem',
         '120': '45rem',
+      },
+      colors: {
+        'main-title': '#e63946',
+        'main-text-dark': '#f1faee',
+        'main-text-light': '#1d3557',
+        'main-body': '#a8dadc',
+        'main-blue':'#457b9d'
       }
     },
   },
