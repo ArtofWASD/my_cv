@@ -24,7 +24,8 @@ module.exports = {
         'main-text-light': '#1d3557',
         'main-body': '#F2E8CF',
         'main-blue': '#6A994E',
-        'main-red': '#E63946'
+        'main-red': '#E63946',
+        'main-green': '#A7C957',
         
       }
     },
