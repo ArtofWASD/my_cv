@@ -22,8 +22,10 @@ module.exports = {
         'main-title': '#e63946',
         'main-text-dark': '#f1faee',
         'main-text-light': '#1d3557',
-        'main-body': '#a8dadc',
-        'main-blue':'#457b9d'
+        'main-body': '#F2E8CF',
+        'main-blue': '#6A994E',
+        'main-red': '#E63946'
+        
       }
     },
   },

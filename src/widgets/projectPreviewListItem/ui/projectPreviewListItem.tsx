@@ -31,7 +31,7 @@ export const ProjectPreviewListItem = ({ item }: IPrewievProjectListItem) => {
   };
   return (
     <section className="project-preview grid items-center justify-center py-4">
-      <p className="project-header sticky pb-2 text-center font-bold md:text-xl lg:pb-8 lg:text-2xl">
+      <p className="project-header text-main-red sticky pb-2 text-center font-bold md:text-xl lg:pb-8 lg:text-2xl">
         {item.title}
       </p>
       <div className=" h-72 w-72 justify-self-center rounded-2xl bg-opacity-50 drop-shadow-2xl md:hidden">
