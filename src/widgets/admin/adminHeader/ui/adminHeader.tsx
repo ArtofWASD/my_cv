@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-//TODO: Разбить на компоненты, добавить анимацию на нопку поикса, 
+import { useRouter } from "next/navigation"
+//TODO: Разбить на компоненты, добавить анимацию на нопку поикса,
 export const AdminHeader = () => {
   const [openSearch, setOpenSearch] = useState(false);
+  const router = useRouter();
   return (
-    <div className="grid grid-flow-col items-center justify-between pl-5">
+    <div className="grid grid-flow-col items-center justify-between py-5 pl-5">
       <div className="grid grid-flow-col items-center">
         <Image
           src="/icons/avatar.png"
@@ -18,19 +20,31 @@ export const AdminHeader = () => {
           <p className="text-sm font-light">welcome to your admin panel</p>
         </div>
       </div>
-
       <div className="ml-10 flex items-center gap-2">
-        <input
-          type="text"
-          className={`${openSearch ? "visible h-8 w-48 pl-3 rounded-2xl border-2 border-black" : "hidden"}`}
-        />
+        <div className="flex items-center gap-2">
+          <input
+            type="text"
+            className={`${openSearch ? "visible h-8 w-48 rounded-2xl border-2 border-black pl-3" : "hidden"}`}
+          />
+          <Image
+            src="/icons/search.png"
+            width={40}
+            height={40}
+            alt="Picture of the author"
+            onClick={() => setOpenSearch(!openSearch)}
+            className="hover:scale-110"
+          />
+        </div>
+        <div>
         <Image
-          src="/icons/search.png"
-          width={40}
-          height={40}
-          alt="Picture of the author"
-          onClick={() => setOpenSearch(!openSearch)}
-        />
+            src="/icons/previous.png"
+            width={40}
+            height={40}
+            alt="Picture of the author"
+            onClick={() => router.push("/")}
+            className="hover:scale-110"
+          />
+        </div>
       </div>
     </div>
   );
