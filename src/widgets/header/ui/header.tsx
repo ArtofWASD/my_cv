@@ -24,7 +24,7 @@ export const Header = () => {
             height={40}
             alt="Picture of the author"
             onClick={() => router.push("/admin")}
-            className="hover:scale-110"
+            className="hover:scale-110 cursor-pointer"
           />
       </div>
       <div className="grid items-end justify-items-center lg:grid-cols-[95%_5%]">

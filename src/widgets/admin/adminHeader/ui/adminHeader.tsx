@@ -32,7 +32,7 @@ export const AdminHeader = () => {
             height={40}
             alt="Picture of the author"
             onClick={() => setOpenSearch(!openSearch)}
-            className="hover:scale-110"
+            className="hover:scale-110 cursor-pointer"
           />
         </div>
         <div>
@@ -42,7 +42,7 @@ export const AdminHeader = () => {
             height={40}
             alt="Picture of the author"
             onClick={() => router.push("/")}
-            className="hover:scale-110"
+            className="hover:scale-110 cursor-pointer"
           />
         </div>
       </div>

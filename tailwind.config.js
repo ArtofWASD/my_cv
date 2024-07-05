@@ -23,10 +23,9 @@ module.exports = {
         'main-text-dark': '#f1faee',
         'main-text-light': '#1d3557',
         'main-body': '#F2E8CF',
-        'main-blue': '#6A994E',
+        'main-blue': '#6a994eba',
         'main-red': '#E63946',
         'main-green': '#A7C957',
-        
       }
     },
   },
