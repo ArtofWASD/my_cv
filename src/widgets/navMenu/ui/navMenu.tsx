@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,7 +37,7 @@ export const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
               className="grid items-end justify-items-center"
             >
               <motion.p
-                className="absolute cursor-pointer text-xl"
+                className="absolute cursor-pointer text-xl font-semibold text-white"
                 variants={text}
               >
                 {item.name}
@@ -47,7 +48,7 @@ export const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
                   width="45"
                   height="45"
                   alt={item.name}
-                  className="relative cursor-pointer "
+                  className="relative cursor-pointer"
                 />
               </motion.div>
             </Link>
