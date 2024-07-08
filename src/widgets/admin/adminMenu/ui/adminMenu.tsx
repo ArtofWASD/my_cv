@@ -1,15 +1,10 @@
 "use client";
-import { useAdminMenuTogglerStore } from "@/src/shared/store/store";
-
+import { useAdminMenuTogglerStore } from "@/src/shared/api/store/adminStatusStore";
 export const AdminMenu = () => {
   const toggleMenu = useAdminMenuTogglerStore((state: any) => state.addStatus);
-
-
   const mockStatus = [
     { status: "Projects", id: 1 },
-
     { status: "Blog", id: 2 },
-
     { status: "About", id: 3 },
   ];
   return (
