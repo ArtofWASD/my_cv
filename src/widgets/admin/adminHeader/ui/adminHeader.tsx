@@ -7,7 +7,7 @@ export const AdminHeader = () => {
   const [openSearch, setOpenSearch] = useState(false);
   const router = useRouter();
   return (
-    <div className="grid grid-flow-col items-center justify-between py-5 pl-5">
+    <section className="grid grid-flow-col items-center justify-between py-5 px-5">
       <div className="grid grid-flow-col items-center">
         <Image
           src="/icons/avatar.png"
@@ -46,6 +46,6 @@ export const AdminHeader = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };

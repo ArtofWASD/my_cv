@@ -5,6 +5,7 @@ import { AdminBlogList } from "@/src/widgets/admin/adminBlogList";
 import { AdminHeader } from "@/src/widgets/admin/adminHeader";
 import { AdminMenu } from "@/src/widgets/admin/adminMenu";
 import { AdminProjectsList } from "@/src/widgets/admin/adminProjectsList/ui";
+import { HorizontalAdminMenu } from "@/src/widgets/experemental/horizontalAdminMenu";
 
 const AdminPage = () => {
   const status = useAdminMenuTogglerStore((state: any) => state.adminStatus);
@@ -16,6 +17,7 @@ const AdminPage = () => {
         </div>
         <div>
           <AdminHeader />
+          <HorizontalAdminMenu />
           {status === "Projects" && <AdminProjectsList />}
           {status === "About" && <AdminAbout />}
           {status === "Blog" && <AdminBlogList />}

@@ -14,34 +14,48 @@ export const AdminAbout = () => {
   const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
   const registerWithMask = useHookFormMask(register);
   return (
-    <div>
-      <div className="pl-10 text-3xl font-bold text-main-red">
+    <div className="mx-6 mb-5 h-screen rounded-lg bg-white py-5 pr-6">
+      <div className="pl-4 text-3xl font-bold text-main-red">
         Профиль и настройки
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-flow-row px-10"
+        className="grid grid-flow-row px-4"
       >
-        <label>Имя</label>
-        <input {...register("firstName")} className="rounded-lg py-1" />
-        <label>О себе</label>
-        <textarea {...register("lastName")} className="rounded-lg py-1" />
-        <label>Почта</label>
+        <label className="py-1 text-xl font-semibold text-main-red">Имя</label>
+        <input
+          {...register("firstName")}
+          className="rounded-lg border-2 border-main-blue py-2 pl-2"
+        />
+        <label className="py-1 text-xl font-semibold text-main-red">
+          О себе
+        </label>
+        <textarea
+          {...register("lastName")}
+          className="rounded-lg border-2 border-main-blue py-2 pl-2"
+        />
+        <label className="py-1 text-xl font-semibold text-main-red">
+          Почта
+        </label>
         <input
           {...register("email")}
-          className="rounded-lg py-1"
+          className="rounded-lg border-2 border-main-blue py-2 pl-2"
           placeholder="mail@mail.com"
         />
-        <label>Телефон</label>
+        <label className="py-1 text-xl font-semibold text-main-red">
+          Телефон
+        </label>
         <input
           {...registerWithMask("phone", ["+9 (999) 999-99-99"])}
           placeholder="+9 (999) 999-99-99"
-          className="rounded-lg py-1"
+          className="rounded-lg border-2 border-main-blue py-2 pl-2"
         />
-        <label>Телеграм</label>
+        <label className="py-1 text-xl font-semibold text-main-red">
+          Телеграм
+        </label>
         <input
           {...register("telegram")}
-          className="rounded-lg py-1"
+          className="rounded-lg border-2 border-main-blue py-2 pl-2"
           placeholder="@yourname"
         />
         <input
