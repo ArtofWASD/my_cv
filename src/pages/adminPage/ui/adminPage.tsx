@@ -1,5 +1,7 @@
-'use client';
-import { useAdminMenuTogglerStore } from "@/src/shared/store/store";
+"use client";
+import { useAdminMenuTogglerStore } from "@/src/shared/api/store/adminStatusStore";
+import { AdminAbout } from "@/src/widgets/admin/adminAbout";
+import { AdminBlogList } from "@/src/widgets/admin/adminBlogList";
 import { AdminHeader } from "@/src/widgets/admin/adminHeader";
 import { AdminMenu } from "@/src/widgets/admin/adminMenu";
 import { AdminProjectsList } from "@/src/widgets/admin/adminProjectsList/ui";
@@ -9,13 +11,14 @@ const AdminPage = () => {
   return (
     <>
       <div className="admin-page grid grid-cols-[15%_80%]">
-        <div className="left-side_menu h-screen">
+        <div className="left-side_menu h-screen py-6">
           <AdminMenu />
         </div>
         <div>
           <AdminHeader />
           {status === "Projects" && <AdminProjectsList />}
-          
+          {status === "About" && <AdminAbout />}
+          {status === "Blog" && <AdminBlogList />}
         </div>
       </div>
     </>
