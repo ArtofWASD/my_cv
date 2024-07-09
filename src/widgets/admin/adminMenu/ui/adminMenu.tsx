@@ -2,6 +2,7 @@
 import { useAdminMenuTogglerStore } from "@/src/shared/api/store/adminStatusStore";
 export const AdminMenu = () => {
   const toggleMenu = useAdminMenuTogglerStore((state: any) => state.addStatus);
+  
   const mockStatus = [
     { status: "Projects", id: 1 },
     { status: "Blog", id: 2 },

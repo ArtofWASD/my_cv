@@ -5,9 +5,9 @@ import Image from "next/image";
 export const AdminProjectsList = () => {
   const testDB = mockBD;
   return (
-    <>
-      <div className="pl-10 text-3xl font-bold text-main-red">Ваши проекты</div>
-      <div className="mt-5 grid pl-10">
+    <section className="mx-6 mb-5 h-screen rounded-r-xl rounded-bl-lg bg-white py-5 pr-6">
+      <div className="pl-4 text-3xl font-bold text-main-red">Ваши проекты</div>
+      <div className="mt-5 grid pl-4">
         {testDB.map((item) => (
           <section
             key={item.id}
@@ -37,7 +37,12 @@ export const AdminProjectsList = () => {
             </div>
           </section>
         ))}
+        <input
+          type="button"
+          value="Добавить проект"
+          className="cursor-pointer justify-self-end rounded-xl bg-main-title px-4 py-2"
+        />
       </div>
-    </>
+    </section>
   );
 };

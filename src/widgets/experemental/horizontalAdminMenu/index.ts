@@ -1,0 +1,1 @@
+export { HorizontalAdminMenu } from './ui/horizontalAdminMenu';
