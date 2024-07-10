@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Footer } from "@/src/widgets/footer/index";
 import "@/app/globals.css";
+import { Providers } from "@/src/shared/providers/providers";
 export const metadata: Metadata = {
   title: "Admin DashBoard",
   description: "Админ панель",
@@ -13,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru" suppressHydrationWarning>
       <body className={inter.className}>
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>

@@ -13,7 +13,7 @@ export const AdminMenu = () => {
     <section className="menu ml-6 h-screen border-r-2 pt-2">
       <div className="grid grid-flow-col justify-start gap-2 items-end pb-5">
         <Image src="/icons/Logo.png" width={50} height={50} alt="menu" />
-        <p className="font-bold text-main-red text-xl">Skill's Showcase</p>
+        <p className="font-bold text-main-red text-xl">Skills Showcase</p>
       </div>
 
       {mockStatus.map((item) => (
