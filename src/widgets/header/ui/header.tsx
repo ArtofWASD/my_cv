@@ -5,6 +5,7 @@ import Toggler from "@/src/shared/ui/toggler";
 import { NavMenu } from "../../navMenu/ui/navMenu";
 import { useRouter } from "next/navigation"
 import Image from "next/image";
+import { ThemeToggler } from "@/src/shared/ui/themeToggler";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -17,7 +18,7 @@ export const Header = () => {
   return (
     <header className="grid bg-main-blue">
       <div className="flex gap-2 justify-self-end pr-2 pt-2">
-        <Toggler />
+        <ThemeToggler/>
         <Image
             src="/icons/settings.png"
             width={40}
