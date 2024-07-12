@@ -3,8 +3,8 @@ import { usePathname } from "next/navigation";
 import { NavMenu } from "../../navMenu/ui/navMenu";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { IconButton } from "@/src/shared/ui/iconButton";
-import { rotate } from "@/src/shared/ui/animations/rotate";
+import { IconButton } from "@/src/shared/ui/buttons/iconButton";
+import { rotate } from "@/src/shared/ui/buttons/animations/rotate";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
