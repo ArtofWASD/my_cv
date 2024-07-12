@@ -12,7 +12,7 @@ interface INavItems {
 
 export const NavMenu = ({ menuItems }: { menuItems: Array<INavItems> }) => {
   return (
-    <div className="grid grid-flow-col gap-5">
+    <div className="grid grid-flow-col gap-10">
       {menuItems.map((item) => (
         <div key={item.name}>
           <Link href={item.url} className="">
