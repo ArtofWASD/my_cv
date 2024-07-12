@@ -1,9 +1,10 @@
 "use client";
 import { usePathname } from "next/navigation";
-import Button from "@/src/shared/ui/button";
 import { NavMenu } from "../../navMenu/ui/navMenu";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { IconButton } from "@/src/shared/ui/iconButton";
+import { rotate } from "@/src/shared/ui/animations/rotate";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -16,14 +17,7 @@ export const Header = () => {
   return (
     <header className="grid bg-main-blue">
       <div className="flex gap-2 justify-self-end items-center pr-2 pt-2">
-        <Image
-          src="/icons/settings.png"
-          width={40}
-          height={40}
-          alt="Picture of the author"
-          onClick={() => router.push("/admin")}
-          className="cursor-pointer hover:scale-110"
-        />
+        <IconButton buttonProps={{ route: "/admin", animation: {}, icon: "/icons/settings.png", name: "Настройки", size: 40, variant: {rotate} }} />
         {pathname == "/" ? (
           <></>
         ) : (
