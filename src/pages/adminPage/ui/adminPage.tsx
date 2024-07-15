@@ -4,7 +4,7 @@ import { AdminAbout } from "@/src/widgets/admin/adminAbout";
 import { AdminBlogList } from "@/src/widgets/admin/adminBlogList";
 import { AdminHeader } from "@/src/widgets/admin/adminHeader";
 import { AdminProjectsList } from "@/src/widgets/admin/adminProjectsList/ui";
-import { HorizontalAdminMenu } from "@/src/widgets/experemental/horizontalAdminMenu";
+import { HorizontalAdminMenu } from "@/src/widgets/admin/adminMenu/horizontal";
 
 const AdminPage = () => {
   const status = useAdminStore((state: any) => state.adminStatus);
