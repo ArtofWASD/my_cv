@@ -4,7 +4,8 @@ import { NavMenu } from "../../navMenu/ui/navMenu";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { IconButton } from "@/src/shared/ui/buttons/iconButton";
-import { rotate } from "@/src/shared/ui/buttons/animations/rotate";
+import { animation } from "@/src/shared/ui/buttons/animations/rotate";
+import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -14,6 +15,7 @@ export const Header = () => {
     { name: "Блог", img: "/icons/blog.png", url: "/blog" },
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
+  const isLogin = useAdminStore((state: any) => state.isLoggin);
   return (
     <header className="grid grid-cols-[95%_5%] bg-main-blue">
       <div className="grid grid-flow-row-dense items-center justify-center">
@@ -25,15 +27,14 @@ export const Header = () => {
           <NavMenu menuItems={menuItems} />
         </div>
       </div>
-      <div className="flex items-center gap-2 justify-self-end self-start pr-2 pt-2">
+      <div className="flex items-center gap-2 self-start justify-self-end pr-2 pt-2">
         <IconButton
           buttonProps={{
-            route: "/admin",
-            animation: {},
+            route: `${isLogin ? "/admin" : "/"}`,
             icon: "/icons/settings.png",
             name: "Настройки",
             size: 40,
-            variant: { rotate },
+            variant: { animation },
           }}
         />
         {pathname == "/" ? (

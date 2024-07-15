@@ -5,9 +5,10 @@ interface IStore {
   adminStatus: string;
 }
 
-export const useAdminMenuTogglerStore = create(
+export const useAdminStore = create(
   devtools((set, get) => ({
     adminStatus: "Projects",
+    isLoggin: true,
     addStatus: (item: string) =>
       set((state: IStore) => ({
         adminStatus: (state.adminStatus = item),

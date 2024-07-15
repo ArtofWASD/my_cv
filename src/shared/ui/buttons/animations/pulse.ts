@@ -1,16 +1,14 @@
 export const animation = {
-  initial: { rotate: 0 },
+  initial: {},
   hover: {
-    rotate: 360,
+    x: -6,
     transition: {
       repeat: Infinity,
-      duration: 5,
+      duration: 1,
     },
   },
   tap: {
     scale: 0.9,
   },
-  rest: {},
+  rest: { x: 0 },
 };
-
-

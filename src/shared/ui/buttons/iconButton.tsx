@@ -4,19 +4,19 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 interface IButtonProps {
   route: string;
-  animation: {};
   icon: string;
   name: string;
   size: number;
-  variant: any
+  variant:any
 }
-export const IconButton = ({ buttonProps }: { buttonProps: IButtonProps }) => {
+export const IconButton = ({ buttonProps }: { buttonProps: IButtonProps }) => {  
   const router = useRouter();  
   return (
     <motion.div className="flex items-center gap-2">
       <motion.div
-        variants={buttonProps.variant.rotate}
+        variants={buttonProps.variant.animation}
         whileHover="hover"
+        whileTap="tap"
         initial="initial"
         exit="rest"
       >

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { useAdminMenuTogglerStore } from "@/src/shared/api/store/adminStatusStore";
+import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
 
 export const HorizontalAdminMenu = () => {
-  const toggleMenu = useAdminMenuTogglerStore((state: any) => state.addStatus);
-  const status = useAdminMenuTogglerStore((state: any) => state.adminStatus);
+  const toggleMenu = useAdminStore((state: any) => state.addStatus);
+  const status = useAdminStore((state: any) => state.adminStatus);
   const mockStatus = [
     { status: "Projects", id: 1, url: "/icons/projects.png" },
     { status: "Blog", id: 2, url: "/icons/blog.png" },
