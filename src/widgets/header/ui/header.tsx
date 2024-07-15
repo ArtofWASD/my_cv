@@ -15,9 +15,27 @@ export const Header = () => {
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
   return (
-    <header className="grid bg-main-blue">
-      <div className="flex gap-2 justify-self-end items-center pr-2 pt-2">
-        <IconButton buttonProps={{ route: "/admin", animation: {}, icon: "/icons/settings.png", name: "Настройки", size: 40, variant: {rotate} }} />
+    <header className="grid grid-cols-[95%_5%] bg-main-blue">
+      <div className="grid grid-flow-row-dense items-center justify-center">
+        <div className="grid grid-flow-col items-end justify-center gap-2">
+          <Image src="/icons/Logo.png" width={50} height={50} alt="menu" />
+          <p className="text-2xl font-bold text-white">Skills Showcase</p>
+        </div>
+        <div className="">
+          <NavMenu menuItems={menuItems} />
+        </div>
+      </div>
+      <div className="flex items-center gap-2 justify-self-end self-start pr-2 pt-2">
+        <IconButton
+          buttonProps={{
+            route: "/admin",
+            animation: {},
+            icon: "/icons/settings.png",
+            name: "Настройки",
+            size: 40,
+            variant: { rotate },
+          }}
+        />
         {pathname == "/" ? (
           <></>
         ) : (
@@ -32,11 +50,6 @@ export const Header = () => {
             />
           </div>
         )}
-      </div>
-      <div className="grid items-end justify-items-center lg:grid-cols-[95%_5%]">
-        <div className="py-4 lg:ml-20">
-          <NavMenu menuItems={menuItems} />
-        </div>
       </div>
     </header>
   );
