@@ -6,6 +6,7 @@ import Image from "next/image";
 import { IconButton } from "@/src/shared/ui/buttons/iconButton";
 import { animation } from "@/src/shared/ui/buttons/animations/rotate";
 import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
+import { Modal } from "@/src/shared/ui/modal/modal";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -16,6 +17,7 @@ export const Header = () => {
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
   const isLogin = useAdminStore((state: any) => state.isLoggin);
+  const login = useAdminStore((state: any) => state.login);
   return (
     <header className="grid grid-cols-[95%_5%] bg-main-blue">
       <div className="grid grid-flow-row-dense items-center justify-center">
@@ -30,7 +32,7 @@ export const Header = () => {
       <div className="flex items-center gap-2 self-start justify-self-end pr-2 pt-2">
         <IconButton
           buttonProps={{
-            route: `${isLogin ? "/admin" : "/"}`,
+            route: `${isLogin ? "/admin" : "?modal=true"}`,
             icon: "/icons/settings.png",
             name: "Настройки",
             size: 40,
@@ -52,6 +54,16 @@ export const Header = () => {
           </div>
         )}
       </div>
+      <Modal title="Настройки" onClose={() => router.push("/")}>
+        <>
+          <div
+            className="border-2 px-4 py-2 text-center"
+            onClick={() => login(true)}
+          >
+            Залогироваться
+          </div>
+        </>
+      </Modal>
     </header>
   );
 };
