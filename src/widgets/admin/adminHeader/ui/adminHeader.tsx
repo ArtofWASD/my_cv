@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { IconButton } from "@/src/shared/ui/buttons/iconButton";
+import { animation } from "@/src/shared/ui/buttons/animations/pulse";
 //TODO: Разбить на компоненты, добавить анимацию на нопку поикса,
 export const AdminHeader = () => {
   const [openSearch, setOpenSearch] = useState(false);
-  const router = useRouter();
   return (
     <section className="grid grid-flow-col items-center justify-between px-5 py-5">
       <div className="grid grid-flow-col items-center">
@@ -40,13 +40,14 @@ export const AdminHeader = () => {
           />
         </div>
         <div>
-          <Image
-            src="/icons/previous.png"
-            width={40}
-            height={40}
-            alt="Picture of the author"
-            onClick={() => router.push("/")}
-            className="cursor-pointer hover:scale-110"
+          <IconButton
+            buttonProps={{
+              route: "/",
+              icon: "/icons/previous.png",
+              name: "Назад",
+              size: 40,
+              variant: { animation },
+            }}
           />
         </div>
       </div>
