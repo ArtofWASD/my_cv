@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useAdminMenuTogglerStore } from "@/src/shared/api/store/adminStatusStore";
+import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
 export const AdminMenu = () => {
-  const toggleMenu = useAdminMenuTogglerStore((state: any) => state.addStatus);
+  const toggleMenu = useAdminStore((state: any) => state.addStatus);
 
   const mockStatus = [
     { status: "Projects", id: 1 },
