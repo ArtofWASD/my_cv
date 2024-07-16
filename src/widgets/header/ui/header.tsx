@@ -7,6 +7,8 @@ import { IconButton } from "@/src/shared/ui/buttons/iconButton";
 import { animation } from "@/src/shared/ui/buttons/animations/rotate";
 import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
 import { Modal } from "@/src/shared/ui/modal/modal";
+import { Suspense } from "react";
+import { Login } from "../../login";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -54,16 +56,11 @@ export const Header = () => {
           </div>
         )}
       </div>
-      <Modal title="Настройки" onClose={() => router.push("/")}>
-        <>
-          <div
-            className="border-2 px-4 py-2 text-center"
-            onClick={() => login(true)}
-          >
-            Залогироваться
-          </div>
-        </>
-      </Modal>
+      <Suspense>
+        <Modal onClose={() => router.push("/")}>
+          <Login />
+        </Modal>
+      </Suspense>
     </header>
   );
 };
