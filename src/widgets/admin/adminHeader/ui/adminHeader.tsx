@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { IconButton } from "@/src/shared/ui/buttons/iconButton";
-import { animation } from "@/src/shared/ui/buttons/animations/pulse";
+import { animations } from "@/src/shared/ui/buttons/animations/animations";
 //TODO: Разбить на компоненты, добавить анимацию на нопку поикса,
 export const AdminHeader = () => {
   const [openSearch, setOpenSearch] = useState(false);
@@ -46,7 +46,7 @@ export const AdminHeader = () => {
               icon: "/icons/previous.png",
               name: "Назад",
               size: 40,
-              variant: { animation },
+              variant: { animation: animations.bounce },
             }}
           />
         </div>

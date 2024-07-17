@@ -4,11 +4,11 @@ import { NavMenu } from "../../navMenu/ui/navMenu";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { IconButton } from "@/src/shared/ui/buttons/iconButton";
-import { animation } from "@/src/shared/ui/buttons/animations/rotate";
 import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
 import { Modal } from "@/src/shared/ui/modal/modal";
 import { Suspense } from "react";
 import { Login } from "../../login";
+import { animations } from "@/src/shared/ui/buttons/animations/animations";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -38,7 +38,7 @@ export const Header = () => {
             icon: "/icons/settings.png",
             name: "Настройки",
             size: 40,
-            variant: { animation },
+            variant: { animation: animations.rotate },
           }}
         />
         {pathname == "/" ? (
