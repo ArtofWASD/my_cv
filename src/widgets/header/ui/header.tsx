@@ -7,8 +7,9 @@ import { IconButton } from "@/src/shared/ui/buttons/iconButton";
 import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
 import { Modal } from "@/src/shared/ui/modal/modal";
 import { Suspense } from "react";
-import { Login } from "../../login";
+import { LoginForm } from "../../loginForm";
 import { animations } from "@/src/shared/ui/buttons/animations/animations";
+import { RegisterForm } from "../../registerForm";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -19,6 +20,7 @@ export const Header = () => {
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
   const isLogin = useAdminStore((state: any) => state.isLoggin);
+  const isRegister = useAdminStore((state: any) => state.isRegister);
   const login = useAdminStore((state: any) => state.login);
   return (
     <header className="grid grid-cols-[95%_5%] bg-main-blue">
@@ -58,7 +60,8 @@ export const Header = () => {
       </div>
       <Suspense>
         <Modal onClose={() => router.push("/")}>
-          <Login />
+          {!isLogin && !isRegister && <LoginForm />}
+          {isRegister && <RegisterForm/>}
         </Modal>
       </Suspense>
     </header>

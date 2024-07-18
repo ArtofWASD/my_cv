@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
+    "@hookform/error-message": "^2.0.1",
     "@supabase-cache-helpers/postgrest-swr": "^1.7.1",
     "@supabase-cache-helpers/storage-swr": "^1.0.16",
     "@supabase/ssr": "^0.3.0",

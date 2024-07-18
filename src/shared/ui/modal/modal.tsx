@@ -13,7 +13,7 @@ export const Modal = ({ onClose, children }: IModalProps) => {
   const handleCloseClick = (e: React.MouseEvent) => {
     e.preventDefault();
     onClose();
-  };
+  };  
   return (
     <>
       {modal && (
