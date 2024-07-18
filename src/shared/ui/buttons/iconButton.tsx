@@ -7,7 +7,7 @@ interface IButtonProps {
   icon: string;
   name: string;
   size: number;
-  variant:any
+  variant: any
 }
 export const IconButton = ({ buttonProps }: { buttonProps: IButtonProps }) => {  
   const router = useRouter();  
@@ -25,7 +25,7 @@ export const IconButton = ({ buttonProps }: { buttonProps: IButtonProps }) => {
           width={buttonProps.size}
           height={buttonProps.size}
           alt={buttonProps.name}
-          className=" cursor-pointer"
+          className="cursor-pointer"
           onClick={() => router.push(buttonProps.route)}
         />
       </motion.div>

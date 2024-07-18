@@ -4,8 +4,12 @@ import { NavMenu } from "../../navMenu/ui/navMenu";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { IconButton } from "@/src/shared/ui/buttons/iconButton";
-import { animation } from "@/src/shared/ui/buttons/animations/rotate";
 import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
+import { Modal } from "@/src/shared/ui/modal/modal";
+import { Suspense } from "react";
+import { LoginForm } from "../../loginForm";
+import { animations } from "@/src/shared/ui/buttons/animations/animations";
+import { RegisterForm } from "../../registerForm";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -16,6 +20,8 @@ export const Header = () => {
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
   const isLogin = useAdminStore((state: any) => state.isLoggin);
+  const isRegister = useAdminStore((state: any) => state.isRegister);
+  const login = useAdminStore((state: any) => state.login);
   return (
     <header className="grid grid-cols-[95%_5%] bg-main-blue">
       <div className="grid grid-flow-row-dense items-center justify-center">
@@ -30,11 +36,11 @@ export const Header = () => {
       <div className="flex items-center gap-2 self-start justify-self-end pr-2 pt-2">
         <IconButton
           buttonProps={{
-            route: `${isLogin ? "/admin" : "/"}`,
+            route: `${isLogin ? "/admin" : "?modal=true"}`,
             icon: "/icons/settings.png",
             name: "Настройки",
             size: 40,
-            variant: { animation },
+            variant: { animation: animations.rotate },
           }}
         />
         {pathname == "/" ? (
@@ -52,6 +58,12 @@ export const Header = () => {
           </div>
         )}
       </div>
+      <Suspense>
+        <Modal onClose={() => router.push("/")}>
+          {!isLogin && !isRegister && <LoginForm />}
+          {isRegister && <RegisterForm/>}
+        </Modal>
+      </Suspense>
     </header>
   );
 };
