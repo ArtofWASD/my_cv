@@ -17,7 +17,6 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm<FormValues>();
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
     setLogin(true);
     reset();
     router.push("/admin");

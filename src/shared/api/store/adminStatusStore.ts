@@ -7,7 +7,7 @@ interface IStore {
   isLoggin: boolean;
   isRegister: boolean;
 }
-interface IModoalForm {
+interface IModalForm {
   isLoginFormOpen: boolean;
   isRegisterFormOpen: boolean;
 }
@@ -29,17 +29,16 @@ export const useAdminStore = create(
 
 export const useModalForm = create(
   devtools((set) => ({
-    user: null,
     isLoginFormOpen: true,
     isRegisterFormOpen: false,
     openLoginForm: () =>
-      set((state: IModoalForm) => ({
+      set((state: IModalForm) => ({
         isLoginFormOpen: (state.isLoginFormOpen = !state.isLoginFormOpen),
         isRegisterFormOpen: (state.isRegisterFormOpen =
           !state.isRegisterFormOpen),
       })),
     openRegisterForm: () =>
-      set((state: IModoalForm) => ({
+      set((state: IModalForm) => ({
         isLoginFormOpen: (state.isLoginFormOpen = !state.isLoginFormOpen),
         isRegisterFormOpen: (state.isRegisterFormOpen =
           !state.isRegisterFormOpen),

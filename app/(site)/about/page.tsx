@@ -1,10 +1,12 @@
+'use client';
+import { UsedTechInPorject } from "@/src/shared/ui/usedTechInPorject";
 import { Avatar } from "@/src/widgets/avatar";
 import React from "react";
 
 const About = () => {
   return (
     // TODO: Более подробное описание о себе, раздел Стек технологий, хобби, ссылка на гитхаб, фотогалерею (можно какую нибудь библиотеку)
-    <main className="mx-36 grid flex-wrap items-center justify-center">
+    <main className="px-36 grid flex-wrap items-center justify-center">
       <div className="grid grid-cols-2  items-center">
         <div className="body py-10 text-center">
           Привет, я Леонид, мне 37 лет и я фронтенд разработчик. Живу в
@@ -19,12 +21,7 @@ const About = () => {
         <Avatar />
       </div>
       <div className="stack">
-        <p>
-          Я умею: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
-          tenetur officia fuga, corporis error quisquam. Quisquam blanditiis
-          corrupti, adipisci veritatis accusantium aperiam mollitia dolor saepe,
-          modi quod magnam dolores minus?
-        </p>
+        <UsedTechInPorject item={{ title: "React", imgUrl: "/icons/React.svg" }} />
       </div>
       <div className="hobbies">
         <p>
