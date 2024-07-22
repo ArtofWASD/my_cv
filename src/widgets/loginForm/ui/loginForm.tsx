@@ -1,7 +1,8 @@
 "use client";
-import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
+import { useAdminStore, useModalForm } from "@/src/shared/api/store/adminStatusStore";
 import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 
 type FormValues = {
   Login: string;
@@ -18,15 +19,16 @@ export const LoginForm = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
     setLogin(true);
-    setRegister(true)
     reset();
     router.push("/admin");
   };
+  const openRegisterForm = useModalForm((state: any) => state.openRegisterForm);
   const setLogin = useAdminStore((state: any) => state.login);
-  const setRegister = useAdminStore((state: any) => state.register);
   return (
     <div>
-      <h1 className="pb-4 text-center text-2xl font-bold">Вход в админ панель</h1>
+      <h1 className="pb-4 text-center text-2xl font-bold">
+        Вход
+      </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="grid grid-flow-row gap-2"
@@ -35,26 +37,36 @@ export const LoginForm = () => {
         <input
           type="text"
           placeholder="some_email@example.com"
-          {...register("Login", { required: true })}
-          className="rounded-xl border-2 border-slate-400 px-4 py-2"
+          {...register("Login", {
+            required: "Обязательное поле для заполнения",
+          })}
+          className="rounded-xl border-2 border-slate-400 px-2 py-2"
         />
-        {errors.Login?.type === "required" && (
-          <p role="alert" className="text-xs text-red-500">
-            *Обязательное поле
-          </p>
-        )}
+        <ErrorMessage
+          errors={errors}
+          name="Login"
+          render={({ message }) => (
+            <p className="flex self-start text-xs text-red-400">{message}</p>
+          )}
+        />
         <p className="pl-1 text-sm">Пароль</p>
         <input
           type="password"
           placeholder="Password"
-          {...register("Password", { required: true, min: -1, maxLength: 30 })}
-          className="rounded-xl border-2 border-slate-400 px-4 py-2"
+          {...register("Password", {
+            required: "Обязательное поле для заполнения",
+            min: -1,
+            maxLength: 30,
+          })}
+          className="rounded-xl border-2 border-slate-400 px-2 py-2"
         />
-        {errors.Password?.type === "required" && (
-          <p role="alert" className="text-xs text-red-500">
-            *Обязательное поле
-          </p>
-        )}
+        <ErrorMessage
+          errors={errors}
+          name="Password"
+          render={({ message }) => (
+            <p className="flex self-start text-xs text-red-400">{message}</p>
+          )}
+        />
         <input
           type="submit"
           value="Вход"
@@ -62,11 +74,12 @@ export const LoginForm = () => {
         />
       </form>
       <div>
-        <p className="pt-4 text-center text-sm ">
+        <p className="pt-4 text-center text-sm">
           Нет учётной записи?{" "}
           <span
+            className="cursor-pointer hover:text-green-400"
             onClick={() => {
-              setRegister(true), setLogin(false);
+              openRegisterForm()
             }}
           >
             Зарегистрируйтесь!
