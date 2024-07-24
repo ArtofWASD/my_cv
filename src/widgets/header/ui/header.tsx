@@ -4,7 +4,10 @@ import { NavMenu } from "../../navMenu/ui/navMenu";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { IconButton } from "@/src/shared/ui/buttons/iconButton";
-import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
+import {
+  useAdminStore,
+  useModalForm,
+} from "@/src/shared/api/store/adminStatusStore";
 import { Modal } from "@/src/shared/ui/modal/modal";
 import { Suspense } from "react";
 import { LoginForm } from "../../loginForm";
@@ -19,9 +22,11 @@ export const Header = () => {
     { name: "Блог", img: "/icons/blog.png", url: "/blog" },
     { name: "Контакты", img: "/icons/contact.png", url: "/contacts" },
   ];
-  const isLogin = useAdminStore((state: any) => state.isLoggin);
-  const isRegister = useAdminStore((state: any) => state.isRegister);
-  const login = useAdminStore((state: any) => state.login);
+  const openLoginForm = useModalForm((state: any) => state.isLoginFormOpen);
+  const openRegisterForm = useModalForm(
+    (state: any) => state.isRegisterFormOpen,
+  );
+  const isLogin = useAdminStore((state: any) => state.isLogin);
   return (
     <header className="grid grid-cols-[95%_5%] bg-main-blue">
       <div className="grid grid-flow-row-dense items-center justify-center">
@@ -59,9 +64,9 @@ export const Header = () => {
         )}
       </div>
       <Suspense>
-        <Modal onClose={() => router.push("/")}>
-          {!isLogin && !isRegister && <LoginForm />}
-          {isRegister && <RegisterForm/>}
+        <Modal>
+          {openLoginForm && <LoginForm />}
+          {openRegisterForm && <RegisterForm />}
         </Modal>
       </Suspense>
     </header>

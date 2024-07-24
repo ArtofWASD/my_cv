@@ -1,5 +1,8 @@
 "use client";
-import { useAdminStore } from "@/src/shared/api/store/adminStatusStore";
+import {
+  useAdminStore,
+  useModalForm,
+} from "@/src/shared/api/store/adminStatusStore";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 
@@ -17,13 +20,11 @@ export const RegisterForm = () => {
     formState: { errors },
   } = useForm<FormValues>();
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
     login(true);
     reset();
   };
   const login = useAdminStore((state: any) => state.login);
-  const setLogin = useAdminStore((state: any) => state.login);
-  const setRegister = useAdminStore((state: any) => state.register);
+  const openLoginForm = useModalForm((state: any) => state.openLoginForm);
   return (
     <div>
       <h1 className="pb-4 text-center text-2xl font-bold">Регистрация</h1>
@@ -38,7 +39,7 @@ export const RegisterForm = () => {
           {...register("Login", {
             required: "Обязательное поле для заполнения",
           })}
-          className="rounded-xl border-2 border-slate-400 px-4 py-2"
+          className="rounded-xl border-2 border-slate-400 px-2 py-2"
         />
         <ErrorMessage
           errors={errors}
@@ -56,7 +57,7 @@ export const RegisterForm = () => {
             min: -1,
             maxLength: 30,
           })}
-          className="rounded-xl border-2 border-slate-400 px-4 py-2"
+          className="rounded-xl border-2 border-slate-400 px-2 py-2"
         />
         <ErrorMessage
           errors={errors}
@@ -77,7 +78,7 @@ export const RegisterForm = () => {
               String(getValues("Password")) ===
                 String(getValues("re_password")) || "Пароли не совпадают",
           })}
-          className="rounded-xl border-2 border-slate-400 px-4 py-2"
+          className="rounded-xl border-2 border-slate-400 px-2 py-2"
         />
         <ErrorMessage
           errors={errors}
@@ -88,8 +89,8 @@ export const RegisterForm = () => {
         />
         <input
           type="submit"
-          value='Зарегистрироваться'
-          className="mt-4 rounded-xl border-2 bg-green-200 px-4 py-2 hover:bg-green-400"
+          value="Зарегистрироваться"
+          className="mt-4 rounded-xl border-2 bg-green-200 px-2 py-2 hover:bg-green-400"
         />
       </form>
       <div>
@@ -98,7 +99,7 @@ export const RegisterForm = () => {
           <span
             className="cursor-pointer hover:text-green-400"
             onClick={() => {
-              setRegister(false), setLogin(false);
+              openLoginForm();
             }}
           >
             Залогинься!
