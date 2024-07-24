@@ -14,7 +14,7 @@ export const UsedTechInPorject = ({ item }: { item: IStackItem }) => {
   return (
     <div >
       <motion.div initial="inactive" whileHover="active" exit="inactive" className="grid justify-items-center">
-        <motion.div variants={tooltip} className="absolute rounded-lg bg-blue-600 p-1 text-white ">
+        <motion.div variants={tooltip} className="absolute rounded-lg bg-blue-600 p-2 text-white text-sm">
           {item.title}
         </motion.div>
         <motion.div variants={tooltipImage}>

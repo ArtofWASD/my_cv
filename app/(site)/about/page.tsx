@@ -1,12 +1,19 @@
-'use client';
+"use client";
 import { UsedTechInPorject } from "@/src/shared/ui/usedTechInPorject";
 import { Avatar } from "@/src/widgets/avatar";
 import React from "react";
-
+const mock = [
+  { title: "javascript ", imgUrl: "icons/JavaScript.svg" },
+  { title: "typescript ", imgUrl: "icons/TypeScript.svg" },
+  { title: "react ", imgUrl: "/icons/React.svg" },
+  { title: "redux ", imgUrl: "icons/Redux.svg" },
+  { title: "tailwind ", imgUrl: "icons/Tailwind.svg" },
+  { title: "supabase ", imgUrl: "icons/Supabase.svg" },
+];
 const About = () => {
   return (
     // TODO: Более подробное описание о себе, раздел Стек технологий, хобби, ссылка на гитхаб, фотогалерею (можно какую нибудь библиотеку)
-    <main className="px-36 grid flex-wrap items-center justify-center">
+    <main className="grid flex-wrap items-center justify-center px-36">
       <div className="grid grid-cols-2  items-center">
         <div className="body py-10 text-center">
           Привет, я Леонид, мне 37 лет и я фронтенд разработчик. Живу в
@@ -20,8 +27,11 @@ const About = () => {
         </div>
         <Avatar />
       </div>
-      <div className="stack">
-        <UsedTechInPorject item={{ title: "React", imgUrl: "/icons/React.svg" }} />
+      <div className="stack flex items-center gap-6">
+        <p>Мои стек технологий:</p>
+        {mock.map((item) => (
+          <UsedTechInPorject item={item} key={item.title} />
+        ))}
       </div>
       <div className="hobbies">
         <p>

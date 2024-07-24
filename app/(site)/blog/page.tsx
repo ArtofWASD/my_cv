@@ -1,6 +1,7 @@
 import BlogPage from "@/src/pages/blogPage/ui/blogPage";
 import { TypeData } from "@/src/shared/api/model/types";
 import { createClient } from "@/src/shared/api/supabase/supabaseServerClient";
+import { BlogPreviewItem } from "@/src/widgets/blogPreviewItem";
 import { cookies } from "next/headers";
 const Blog = async () => {
   //TODO: вывод постов, которые были добавлены в блог
@@ -13,6 +14,15 @@ const Blog = async () => {
   return (
     <main className="">
       <BlogPage data={posts as TypeData[]} />
+      <div className="grid justify-center gap-4 pt-4">
+      <BlogPreviewItem />
+      <BlogPreviewItem/>
+      <BlogPreviewItem/>
+      <BlogPreviewItem/>
+      <BlogPreviewItem/>
+      <BlogPreviewItem/>
+      </div>
+      
     </main>
   );
 };
