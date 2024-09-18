@@ -4,6 +4,7 @@ import { AboutPagePrewiev } from "@/src/widgets/aboutPagePreview";
 import { ProjectPreviewListItem } from "@/src/widgets/projectPreviewListItem";
 const AppPage = ({ data }: { data: TypeData[] }) => {
   const db = mockBD;
+  // Прикрутить запросы из БД супабэйс 
   return (
     <>
       <AboutPagePrewiev />
