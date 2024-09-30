@@ -9,10 +9,11 @@ import { HorizontalAdminMenu } from "@/src/widgets/admin/adminMenu/horizontal";
 const AdminPage = () => {
   const status = useAdminStore((state: any) => state.adminStatus);
   // Дизайн админки полное говно, надо переделать. под светлую и тёмную тему
+  // А где блять цвет поменять ?!
 
   return (
     <>
-      <div className="admin-page ">
+      <div className="admin-page">
         <div>
           <AdminHeader />
           <HorizontalAdminMenu />

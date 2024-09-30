@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  body {
-      @apply dark:bg-gray-800 bg-white
-  }
+:root {
+  /* Your default theme */
+  --background: white;
+  --foreground: black;
 }
 
-[data-theme='dark'],
-[data-theme='dark'] body {
-  color: #fff;
-  background: #000;
+[data-theme='dark'] {
+  --background: black;
+  --foreground: white;
 }
 
 body {
@@ -22,10 +21,8 @@ body {
   min-height: 100vh;
   position: relative;
 }
-
 main {
   flex: 1;
-  background-color: #f2e8cf70;
 }
 header {
   width: 100%;
