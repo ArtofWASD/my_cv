@@ -4,13 +4,14 @@ import { Header } from "@/src/widgets/header/index";
 import { Footer } from "@/src/widgets/footer/index";
 import "@/app/globals.css";
 import { Providers } from "@/src/shared/providers/providers";
+import { ThemeProvider } from "next-themes";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Skill Showcase",
   description: "Простой конструктор портфолио",
 };
-
+// провайдер для переключения светлой и тёмной темой
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Header />
-        <Providers>{children}</Providers>
+        <ThemeProvider>{children}</ThemeProvider>
         <Footer />
       </body>
     </html>

@@ -5,7 +5,7 @@ import Image from "next/image";
 export const AdminProjectsList = () => {
   const testDB = mockBD;
   return (
-    <section className="mx-6 mb-5 h-screen rounded-r-xl rounded-bl-lg bg-white py-5 pr-6">
+    <section className="mx-6 mb-5 h-screen rounded-r-xl rounded-bl-lg py-5 pr-6">
       <div className="pl-4 text-3xl font-bold text-main-red">Ваши проекты</div>
       <div className="mt-5 grid pl-4">
         {testDB.map((item) => (
