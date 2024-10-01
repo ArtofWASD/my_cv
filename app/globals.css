@@ -5,11 +5,16 @@
 :root {
   /* Your default theme */
   --background: white;
-  --foreground: black;
+  --foreground: rgb(83, 83, 83);
 }
 
-[data-theme='dark'] {
-  --background: black;
+[data-theme="dark"] {
+  --background: rgb(78, 76, 76);
+  --foreground: white;
+}
+
+[data-theme="light"] {
+  --background: rgb(0, 0, 0);
   --foreground: white;
 }
 

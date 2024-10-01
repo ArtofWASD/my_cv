@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Footer } from "@/src/widgets/footer/index";
 import "@/app/globals.css";
 import { Providers } from "@/src/shared/providers/providers";
+import { ThemeProvider } from "next-themes";
 export const metadata: Metadata = {
   title: "Admin DashBoard",
   description: "Админ панель",
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <ThemeProvider>{children}</ThemeProvider>
         <Footer />
       </body>
     </html>
