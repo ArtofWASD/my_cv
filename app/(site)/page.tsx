@@ -10,7 +10,7 @@ const Home = async () => {
     .from("projectsList")
     .select("*");
   return (
-    <main className="">
+    <main className="main">
       <AppPage data={projectsList as TypeData[]} />
     </main>
   );

@@ -13,6 +13,7 @@ import { Suspense } from "react";
 import { LoginForm } from "../../loginForm";
 import { animations } from "@/src/shared/ui/buttons/animations/animations";
 import { RegisterForm } from "../../registerForm";
+import ThemeSwitcher from "../../testThemeSwitcher/themeSwitcher";
 //TODO: добавить на кнопку настроек модальное окно если не авторизван пользователь и если авторизован то редиректить сразу в админку
 export const Header = () => {
   const pathname = usePathname();
@@ -28,7 +29,7 @@ export const Header = () => {
   );
   const isLogin = useAdminStore((state: any) => state.isLogin);
   return (
-    <header className="grid grid-cols-[95%_5%] bg-main-blue">
+    <header className="grid grid-cols-[90%_10%] bg-main-blue">
       <div className="grid grid-flow-row-dense items-center justify-center">
         <div className="grid grid-flow-col items-end justify-center gap-2">
           <Image src="/icons/Logo.png" width={50} height={50} alt="menu" />
@@ -62,6 +63,7 @@ export const Header = () => {
             />
           </div>
         )}
+        <ThemeSwitcher/>
       </div>
       <Suspense>
         <Modal>

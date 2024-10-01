@@ -15,7 +15,7 @@ export const AdminHeader = () => {
           <p className="text-xl font-bold text-main-red">Skills Showcase</p>
         </div>
         <div className="grid grid-flow-row gap-2">
-          <p className="text-md font-bold pl-2">Привет $UserName</p>
+          <p className="text-md pl-2 font-bold">Привет $UserName</p>
         </div>
       </div>
       <div className="ml-10 flex items-center gap-2">
@@ -43,8 +43,8 @@ export const AdminHeader = () => {
               variant: { animation: animations.bounce },
             }}
           />
-          <ThemeSwitcher/>
         </div>
+        <ThemeSwitcher />
       </div>
     </section>
   );
