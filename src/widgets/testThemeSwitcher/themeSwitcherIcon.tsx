@@ -5,10 +5,10 @@ const ThemeSwitcherIcon = ({ theme }: { theme: string }) => {
     <div>
           <Image
             src={`/icons/${theme}.png`}
-            width={30}
-            height={30}
+            width={40}
+            height={40}
             alt="Picture of the author"
-            className="cursor-pointer hover:scale-110"
+            className="cursor-pointer hover:scale-120"
           />
     </div>
   )
