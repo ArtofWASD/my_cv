@@ -29,7 +29,7 @@ export const Header = () => {
   );
   const isLogin = useAdminStore((state: any) => state.isLogin);
   return (
-    <header className="grid grid-cols-[90%_10%] bg-main-blue">
+    <header className="grid grid-cols-[88%_12%] bg-main-blue">
       <div className="grid grid-flow-row-dense items-center justify-center">
         <div className="grid grid-flow-col items-end justify-center gap-2">
           <Image src="/icons/Logo.png" width={50} height={50} alt="menu" />
