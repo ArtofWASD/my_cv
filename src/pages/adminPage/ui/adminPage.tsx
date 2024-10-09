@@ -5,6 +5,7 @@ import { AdminBlogList } from "@/src/widgets/admin/adminBlogList";
 import { AdminHeader } from "@/src/widgets/admin/adminHeader";
 import { AdminProjectsList } from "@/src/widgets/admin/adminProjectsList/ui";
 import { HorizontalAdminMenu } from "@/src/widgets/admin/adminMenu/horizontal";
+import { VerticalAdminMenu } from "@/src/widgets/admin/adminMenu/vertical";
 
 const AdminPage = () => {
   const status = useAdminStore((state: any) => state.adminStatus);
@@ -16,10 +17,11 @@ const AdminPage = () => {
       <div className="admin-page">
         <div>
           <AdminHeader />
-          <HorizontalAdminMenu />
+          <VerticalAdminMenu />
+          {/* <HorizontalAdminMenu />
           {status === "Projects" && <AdminProjectsList />}
           {status === "About" && <AdminAbout />}
-          {status === "Blog" && <AdminBlogList />}
+          {status === "Blog" && <AdminBlogList />} */}
         </div>
       </div>
     </>
