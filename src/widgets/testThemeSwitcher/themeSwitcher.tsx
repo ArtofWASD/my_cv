@@ -8,32 +8,31 @@ function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const [scope, animate] = useAnimate()
 
-  // const moon = {
-  //   visible: {
-  //     x: 2,
-  //     opacity: 0,
-  //     transition: { duration: 0.4 },
-  //   },
-  //   hidden: {
-  //     x: -7,
-  //     opacity: 1,
-  //     transition: { duration: 0.4 },
-  //   },
-  // };
-  // const sun = {
-  //   visible: {
-  //     x: 7,
-  //     opacity: 1,
-  //     transition: { duration: 0.4 },
-  //   },
-  //   hidden: {
-  //     x: 14,
-  //     opacity: 0,
-  //     transition: { duration: 0.4 },
-  //   },
-  // };
+  const moon = {
+    visible: {
+      x: 2,
+      opacity: 0,
+      transition: { duration: 0.4 },
+    },
+    hidden: {
+      x: -7,
+      opacity: 1,
+      transition: { duration: 0.4 },
+    },
+  };
+  const sun = {
+    visible: {
+      x: 7,
+      opacity: 1,
+      transition: { duration: 0.4 },
+    },
+    hidden: {
+      x: 14,
+      opacity: 0,
+      transition: { duration: 0.4 },
+    },
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -45,7 +44,6 @@ function ThemeSwitcher() {
       className={`rounded-full px-2  ${isOpen ? "bg-blue-500" : "bg-sky-900"}`}
     >
       <motion.button
-        ref={scope}
         onClick={() => {
           setTheme(resolvedTheme === "light" ? "dark" : "light"),
             setIsOpen((isOpen) => !isOpen);
@@ -54,11 +52,11 @@ function ThemeSwitcher() {
 
       >
         {resolvedTheme === "light" ? (
-          <motion.div id="moon"  className="">
+          <motion.div id="moon"  className="" initial="visible" animate="hidden" variants={moon}>
             <ThemeSwitcherIcon theme="moon" />
           </motion.div>
         ) : (
-          <motion.div id="sun" className="">
+          <motion.div id="sun" className="" initial="hidden" animate="visible"  variants={sun}>
             <ThemeSwitcherIcon theme="sun" />
           </motion.div>
         )}
