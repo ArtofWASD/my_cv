@@ -14,7 +14,7 @@ interface IModalForm {
 
 export const useAdminStore = create(
   devtools((set) => ({
-    adminStatus: "Projects",
+    adminStatus: "Проекты",
     isLoggin: false,
     login: () =>
       set((state: IStore) => ({
