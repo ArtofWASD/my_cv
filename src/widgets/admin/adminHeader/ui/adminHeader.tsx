@@ -8,16 +8,7 @@ import ThemeSwitcher from "@/src/widgets/testThemeSwitcher/themeSwitcher";
 export const AdminHeader = () => {
   const [openSearch, setOpenSearch] = useState(false);
   return (
-    <section className="grid grid-flow-col items-center justify-between px-6 py-5">
-      <div className="grid grid-flow-row items-center">
-        <div className="grid grid-flow-col items-end justify-start gap-2 pb-2">
-          <Image src="/icons/Logo.png" width={50} height={50} alt="menu" />
-          <p className="text-xl font-bold text-main-red">Skills Showcase</p>
-        </div>
-        <div className="grid grid-flow-row gap-2">
-          <p className="text-md pl-2 font-bold">Привет $UserName</p>
-        </div>
-      </div>
+    <section className="grid grid-flow-col items-center justify-end px-6 py-5">
       <div className="ml-10 flex items-center gap-2">
         <div className="flex items-center gap-2">
           <input

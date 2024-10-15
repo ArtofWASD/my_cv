@@ -11,22 +11,20 @@ import { VerticalAdminMenu } from "@/src/widgets/admin/adminMenu/vertical";
 const AdminPage = () => {
   const status = useAdminStore((state: any) => state.adminStatus);
   return (
-    <>
-      <div className="admin-page">
-        <div>
-          <AdminHeader />
-          <div className="flex">
-            <VerticalAdminMenu />
-            <div className="w-full">
-              {status === "Projects" ||
-                (status === "Проекты" && <AdminProjectsList />)}
-              {status === "About" || (status === "Профиль" && <AdminAbout />)}
-              {status === "Blog" || (status === "Блог" && <AdminBlogList />)}
-            </div>
-          </div>
-        </div>
+    <div className="grid grid-cols-auto grid-rows-[7%_auto]">
+      <div className="row-span-3">
+        <VerticalAdminMenu />
       </div>
-    </>
+      <div className="">
+        <AdminHeader />
+      </div>
+      <div className="col-start-2 row-start-2 row-span-2 w-full">
+        {status === "Projects" ||
+          (status === "Проекты" && <AdminProjectsList />)}
+        {status === "About" || (status === "Профиль" && <AdminAbout />)}
+        {status === "Blog" || (status === "Блог" && <AdminBlogList />)}
+      </div>
+    </div>
   );
 };
 
