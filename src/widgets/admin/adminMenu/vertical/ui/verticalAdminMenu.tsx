@@ -30,7 +30,6 @@ export const VerticalAdminMenu = () => {
       transition: { duration: 0.3 },
     },
     closed: {
-      width: 0,
       opacity: 0,
       transition: { duration: 0.3 },
     },
@@ -39,11 +38,15 @@ export const VerticalAdminMenu = () => {
     <motion.div
       className="shadow-b-2 shadow-r-[3px] -shadow-spread-2 grid h-screen grid-flow-row auto-rows-min gap-2 pl-6 pt-4 shadow-lg shadow-slate-900/20"
       variants={menu}
+      initial="open"
       animate={switchMenu ? "open" : "closed"}
     >
       <div className="grid grid-flow-row items-center">
-        <div className="grid grid-flow-col items-center justify-start gap-2 pb-2">
-          <Image src="/icons/Logo.png" width={50} height={50} alt="menu" />
+        <div
+          className="grid grid-flow-col items-center justify-start gap-2 pb-2"
+          onClick={() => setSwintchMenu(!switchMenu)}
+        >
+          <Image src="/icons/Logo.png" width={40} height={40} alt="admin_logo"  className="cursor-pointer"/>
           <motion.p
             variants={menuItem}
             animate={switchMenu ? "open" : "closed"}
@@ -52,22 +55,16 @@ export const VerticalAdminMenu = () => {
             Skills Showcase
           </motion.p>
         </div>
-        <div className="grid grid-flow-row gap-2">
+        {/* <div className="grid grid-flow-row gap-2">
           <motion.p
             variants={menuItem}
             animate={switchMenu ? "open" : "closed"}
-            className="text-md pl-2 font-bold"
+            className="text-sm pl-2 font-bold"
           >
             Привет $UserName
           </motion.p>
-        </div>
+        </div> */}
       </div>
-      <button
-        className="justify-self-end px-2 text-main-red"
-        onClick={() => setSwintchMenu(!switchMenu)}
-      >
-        {switchMenu ? "<<" : ">>"}
-      </button>
       {mockStatus.map((item) => (
         <div
           key={item.id}
@@ -81,7 +78,7 @@ export const VerticalAdminMenu = () => {
             width={20}
             height={20}
             alt="Picture of the author"
-            className="cursor-pointe object-contain hover:scale-110"
+            className="cursor-pointer object-contain hover:scale-110"
           />
           <motion.p
             className="text-md text-center"
