@@ -41,34 +41,32 @@ export const VerticalAdminMenu = () => {
       initial="open"
       animate={switchMenu ? "open" : "closed"}
     >
-      <div className="grid grid-flow-row items-center">
-        <div
-          className="grid grid-flow-col items-center justify-start gap-2 pb-2"
-          onClick={() => setSwintchMenu(!switchMenu)}
+      <div
+        className="flex cursor-pointer items-center justify-start gap-2 pb-2"
+        onClick={() => setSwintchMenu(!switchMenu)}
+      >
+        <Image
+          src="/icons/Logo.png"
+          width={40}
+          height={40}
+          alt="admin_logo"
+          className="cursor-pointer object-contain"
+        />
+        <motion.p
+          variants={menuItem}
+          animate={switchMenu ? "open" : "closed"}
+          className="text-sm font-bold text-main-red"
         >
-          <Image src="/icons/Logo.png" width={40} height={40} alt="admin_logo"  className="cursor-pointer"/>
-          <motion.p
-            variants={menuItem}
-            animate={switchMenu ? "open" : "closed"}
-            className="text-sm font-bold text-main-red"
-          >
-            Skills Showcase
-          </motion.p>
-        </div>
-        {/* <div className="grid grid-flow-row gap-2">
-          <motion.p
-            variants={menuItem}
-            animate={switchMenu ? "open" : "closed"}
-            className="text-sm pl-2 font-bold"
-          >
-            Привет $UserName
-          </motion.p>
-        </div> */}
+          Skills Showcase
+        </motion.p>
       </div>
       {mockStatus.map((item) => (
-        <div
+        <motion.div
+          animate={{
+            width: switchMenu ? 150 : 35,
+          }}
           key={item.id}
-          className="mr-2 flex cursor-pointer  items-center gap-2 rounded-md py-1 pl-2 hover:bg-gray-200"
+          className="mr-2 flex cursor-pointer items-center gap-2 rounded-md py-1 pl-2 hover:bg-gray-200"
           onClick={() => {
             toggleMenu(item.status);
           }}
@@ -87,7 +85,7 @@ export const VerticalAdminMenu = () => {
           >
             {item.status}
           </motion.p>
-        </div>
+        </motion.div>
       ))}
     </motion.div>
   );

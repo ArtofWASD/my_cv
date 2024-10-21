@@ -11,7 +11,7 @@ import { VerticalAdminMenu } from "@/src/widgets/admin/adminMenu/vertical";
 const AdminPage = () => {
   const status = useAdminStore((state: any) => state.adminStatus);
   return (
-    <div className="grid grid-cols-[auto_auto] grid-rows-[7%_auto]">
+    <div className="grid grid-cols-[10%_auto] grid-rows-[7%_auto]">
       <div className="row-span-3">
         <VerticalAdminMenu />
       </div>
