@@ -30,27 +30,43 @@ export const VerticalAdminMenu = () => {
       transition: { duration: 0.3 },
     },
     closed: {
-      width: 0,
       opacity: 0,
       transition: { duration: 0.3 },
     },
-  }
+  };
   return (
     <motion.div
       className="shadow-b-2 shadow-r-[3px] -shadow-spread-2 grid h-screen grid-flow-row auto-rows-min gap-2 pl-6 pt-4 shadow-lg shadow-slate-900/20"
       variants={menu}
+      initial="open"
       animate={switchMenu ? "open" : "closed"}
     >
-      <button
-        className="justify-self-end px-2 text-main-red"
+      <div
+        className="flex cursor-pointer items-center justify-start gap-2 pb-2"
         onClick={() => setSwintchMenu(!switchMenu)}
       >
-        {switchMenu ? "<<" : ">>"}
-      </button>
+        <Image
+          src="/icons/Logo.png"
+          width={40}
+          height={40}
+          alt="admin_logo"
+          className="cursor-pointer object-contain"
+        />
+        <motion.p
+          variants={menuItem}
+          animate={switchMenu ? "open" : "closed"}
+          className="text-sm font-bold text-main-red"
+        >
+          Skills Showcase
+        </motion.p>
+      </div>
       {mockStatus.map((item) => (
-        <div
+        <motion.div
+          animate={{
+            width: switchMenu ? 150 : 35,
+          }}
           key={item.id}
-          className="mr-2 flex cursor-pointer  items-center gap-2 rounded-md py-1 pl-2 hover:bg-gray-200"
+          className="mr-2 flex cursor-pointer items-center gap-2 rounded-md py-1 pl-2 hover:bg-gray-200"
           onClick={() => {
             toggleMenu(item.status);
           }}
@@ -60,10 +76,16 @@ export const VerticalAdminMenu = () => {
             width={20}
             height={20}
             alt="Picture of the author"
-            className="cursor-pointe object-contain hover:scale-110"
+            className="cursor-pointer object-contain hover:scale-110"
           />
-          <motion.p className="text-md text-center" variants={menuItem} animate={switchMenu ? "open" : "closed" }>{item.status}</motion.p>
-        </div>
+          <motion.p
+            className="text-md text-center"
+            variants={menuItem}
+            animate={switchMenu ? "open" : "closed"}
+          >
+            {item.status}
+          </motion.p>
+        </motion.div>
       ))}
     </motion.div>
   );
